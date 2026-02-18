@@ -269,7 +269,7 @@ body {
 /* ===== Card ===== */
 .card-container {
   perspective: 1000px;
-  height: 220px;
+  height: 280px;
 }
 
 .card {
@@ -293,7 +293,7 @@ body {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  padding: 1.25rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   transition: border-color var(--transition), box-shadow var(--transition);
@@ -318,21 +318,21 @@ body {
 
 /* Front */
 .card-czech {
-  font-size: 1.75rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .card-type {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .card-gender {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--accent);
   font-weight: 600;
 }
@@ -356,27 +356,27 @@ body {
 
 /* Back */
 .card-transcription {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--text-muted);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .card-ukrainian {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
 .card-example {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.5;
   flex: 1;
 }
 
 .card-example-ukr {
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   font-style: italic;
   margin-top: 0.25rem;
@@ -396,13 +396,13 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   transition: all var(--transition);
   color: var(--text-muted);
 }
@@ -443,7 +443,7 @@ body {
 }
 
 .card-ukr-front {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--accent);
 }
@@ -503,6 +503,83 @@ body {
 
 .empty-state-text {
   font-size: 1rem;
+}
+
+/* ===== Flashcard Single Mode ===== */
+.flashcard-section {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem 0;
+}
+
+.flashcard-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.flashcard-nav-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  transition: all var(--transition);
+}
+
+.flashcard-nav-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.flashcard-counter {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 60px;
+  text-align: center;
+}
+
+.flashcard-area .card-container {
+  height: 320px;
+}
+
+/* ===== Show All Toggle ===== */
+.show-all-toggle {
+  text-align: center;
+  padding: 1.5rem 1.25rem 0.5rem;
+}
+
+.show-all-btn {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.show-all-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+/* ===== Hidden ===== */
+.hidden {
+  display: none !important;
 }
 
 /* ===== Toast ===== */

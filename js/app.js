@@ -3,9 +3,11 @@
  */
 const App = (() => {
   let words = [];
-  let currentMode = 'all'; // all | due | favorites | category | reverse
+  let currentMode = 'all'; // all | favorites | category | reverse
   let currentCategory = null;
   let searchQuery = '';
+  let currentCardIndex = 0;
+  let gridVisible = false;
 
   /* ---------- Init ---------- */
 
@@ -24,13 +26,10 @@ const App = (() => {
 
     // Init audio
     Audio.init();
-    // Voices may load async; preload them
-    if (speechSynthesis.onvoiceschanged !== undefined) {
-      speechSynthesis.onvoiceschanged = () => {};
-    }
 
     // Build UI
     buildCategoryFilters();
+    renderFlashcard();
     renderCards();
     updateStats();
     bindEvents();
@@ -101,6 +100,7 @@ const App = (() => {
     }
 
     renderCards();
+    renderFlashcard();
   }
 
   function buildCategoryFilters() {
@@ -128,6 +128,28 @@ const App = (() => {
       btn.addEventListener('click', () => setMode('category', tag));
       row.appendChild(btn);
     });
+  }
+
+  /* ---------- Single Flashcard Mode ---------- */
+
+  function renderFlashcard() {
+    const area = document.getElementById('flashcardArea');
+    const counter = document.getElementById('flashcardCounter');
+    if (!area) return;
+
+    const filtered = getFilteredWords();
+    if (filtered.length === 0) {
+      area.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">Немає карток</div></div>`;
+      if (counter) counter.textContent = '0 / 0';
+      return;
+    }
+
+    if (currentCardIndex >= filtered.length) currentCardIndex = 0;
+    if (currentCardIndex < 0) currentCardIndex = filtered.length - 1;
+
+    area.innerHTML = '';
+    area.appendChild(createCardElement(filtered[currentCardIndex]));
+    if (counter) counter.textContent = `${currentCardIndex + 1} / ${filtered.length}`;
   }
 
   /* ---------- Render Cards ---------- */
@@ -211,11 +233,6 @@ const App = (() => {
           <div class="card-box-indicator">${pips}</div>
         </div>
         <div class="card-face card-back">
-          <div class="card-actions">
-            <button class="card-action-btn speak-btn" data-czech="${word.czech}" title="Вимова">
-              🔊
-            </button>
-          </div>
           ${backContent}
           <div class="review-buttons">
             <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗ Не знаю</button>
@@ -241,7 +258,10 @@ const App = (() => {
       btn.classList.toggle('fav-active', added);
       btn.textContent = added ? '❤️' : '🤍';
       showToast(added ? 'Додано до обраного' : 'Видалено з обраного');
-      if (currentMode === 'favorites') renderCards();
+      if (currentMode === 'favorites') {
+        renderFlashcard();
+        if (gridVisible) renderCards();
+      }
     });
 
     // Speak buttons
@@ -257,14 +277,16 @@ const App = (() => {
       e.stopPropagation();
       const result = SpacedRepetition.onCorrect(word.id);
       showToast(`✓ Коробка ${result.box} з 5`);
-      renderCards();
+      renderFlashcard();
+      if (gridVisible) renderCards();
     });
 
     container.querySelector('.review-btn.wrong').addEventListener('click', (e) => {
       e.stopPropagation();
       SpacedRepetition.onWrong(word.id);
       showToast('✗ Повернено до коробки 1');
-      renderCards();
+      renderFlashcard();
+      if (gridVisible) renderCards();
     });
 
     return container;
@@ -304,12 +326,36 @@ const App = (() => {
     // Search
     document.getElementById('searchInput')?.addEventListener('input', (e) => {
       searchQuery = e.target.value;
-      renderCards();
+      currentCardIndex = 0;
+      renderFlashcard();
+      if (gridVisible) renderCards();
     });
 
     // Mode buttons
     document.querySelectorAll('.filter-btn[data-mode]').forEach(btn => {
       btn.addEventListener('click', () => setMode(btn.dataset.mode));
+    });
+
+    // Flashcard navigation
+    document.getElementById('prevCard')?.addEventListener('click', () => {
+      currentCardIndex--;
+      renderFlashcard();
+    });
+
+    document.getElementById('nextCard')?.addEventListener('click', () => {
+      currentCardIndex++;
+      renderFlashcard();
+    });
+
+    // Show all toggle
+    document.getElementById('showAllBtn')?.addEventListener('click', () => {
+      const grid = document.getElementById('cardGrid');
+      const btn = document.getElementById('showAllBtn');
+      if (!grid || !btn) return;
+      gridVisible = !gridVisible;
+      grid.classList.toggle('hidden', !gridVisible);
+      btn.textContent = gridVisible ? '🔼 Сховати всі слова' : '📋 Показати всі слова';
+      if (gridVisible) renderCards();
     });
 
     // Set default active mode

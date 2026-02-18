@@ -23,10 +23,7 @@
   <!-- Header -->
   <header class="header">
     <div class="header-top">
-      <a href="./" class="logo">
-        <span class="logo-icon">🇨🇿</span>
-        <span>CZ-Vocab</span>
-      </a>
+      <div></div>
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
       </div>
@@ -68,8 +65,23 @@
     </div>
   </section>
 
-  <!-- Card Grid -->
-  <main class="card-grid" id="cardGrid"></main>
+  <!-- Single Flashcard Mode -->
+  <section class="flashcard-section" id="flashcardSection">
+    <div class="flashcard-nav">
+      <button class="flashcard-nav-btn" id="prevCard" title="Попередня">◀</button>
+      <span class="flashcard-counter" id="flashcardCounter">1 / 20</span>
+      <button class="flashcard-nav-btn" id="nextCard" title="Наступна">▶</button>
+    </div>
+    <div class="flashcard-area" id="flashcardArea"></div>
+  </section>
+
+  <!-- Show All Toggle -->
+  <div class="show-all-toggle">
+    <button class="show-all-btn" id="showAllBtn">📋 Показати всі слова</button>
+  </div>
+
+  <!-- Card Grid (hidden by default) -->
+  <main class="card-grid hidden" id="cardGrid"></main>
 
   <!-- Scripts -->
   <script src="js/storage.js"></script>
