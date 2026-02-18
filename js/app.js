@@ -3,7 +3,7 @@
  */
 const App = (() => {
   let words = [];
-  let currentMode = 'all'; // all | favorites | category | reverse
+  let currentMode = 'all'; // all | category | reverse
   let currentCategory = null;
   let learnFilter = 'due'; // 'all' | 'due' (due = new + not learned + due today)
 
@@ -76,9 +76,6 @@ const App = (() => {
 
     // Mode filter
     switch (currentMode) {
-      case 'favorites':
-        filtered = filtered.filter(w => Storage.isFavorite(w.id));
-        break;
       case 'category':
         if (currentCategory) {
           filtered = filtered.filter(w => w.tags.includes(currentCategory));
@@ -201,8 +198,6 @@ const App = (() => {
     container.dataset.wordId = word.id;
 
     const box = SpacedRepetition.getBox(word.id);
-    const isFav = Storage.isFavorite(word.id);
-
     // Box pips
     const pips = Array.from({ length: 5 }, (_, i) =>
       `<span class="box-pip ${i < box ? 'filled' : ''}"></span>`
@@ -215,19 +210,14 @@ const App = (() => {
     container.innerHTML = `
       <div class="card-split">
         <div class="card-left">
-          <div class="card-word-row">
-            <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране" aria-label="Додати або видалити з обраного">
-              <svg class="heart-icon" viewBox="0 0 24 24" width="22" height="22"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
-            <div class="card-czech">${word.czech}</div>
-          </div>
+          <div class="card-czech">${word.czech}</div>
           <div class="card-type">${word.type} ${genderLabel}</div>
           <div class="card-example-row">
             <span class="card-example">${word.example}</span>
             <button class="card-action-btn speak-btn" data-czech="${word.example}" title="Вимова фрази" aria-label="Відтворити вимову фрази"><svg class="speak-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
           </div>
           <div class="card-box-indicator">${pips}</div>
-          <button class="card-speak-float speak-btn" data-czech="${word.czech}" title="Вимова" aria-label="Відтворити вимову"><svg class="speak-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+          <button class="card-speak-float speak-btn" data-czech="${word.czech}" title="Вимова" aria-label="Відтворити вимову"><svg class="speak-icon" viewBox="0 0 24 24" width="28" height="28"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
         </div>
         <div class="card-right" data-revealed="false" role="button" tabindex="0" aria-label="Показати переклад">
           <div class="card-answer-hidden">
@@ -261,18 +251,6 @@ const App = (() => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         reveal();
-      }
-    });
-
-    // Favorite toggle
-    container.querySelector('.fav-btn').addEventListener('click', (e) => {
-      e.stopPropagation();
-      const added = Storage.toggleFavorite(word.id);
-      const btn = e.currentTarget;
-      btn.classList.toggle('fav-active', added);
-      showToast(added ? 'Додано до обраного' : 'Видалено з обраного');
-      if (currentMode === 'favorites') {
-        renderFlashcard();
       }
     });
 

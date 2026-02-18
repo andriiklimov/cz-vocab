@@ -263,30 +263,14 @@ button:focus-visible {
   gap: 0.4rem;
 }
 
-/* Word row — heart inline left of czech word */
-.card-word-row {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  justify-content: center;
-}
-
-.card-word-row .fav-btn {
-  background: none;
-  border: none;
-  width: auto;
-  height: auto;
-  padding: 0.25rem;
-}
-
 /* Floating speak button — right side, thumb-friendly */
 .card-speak-float {
   position: absolute;
   right: 0.5rem;
   bottom: 50%;
   transform: translateY(50%);
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--bg-secondary);
@@ -453,26 +437,6 @@ button:focus-visible {
   color: var(--accent);
 }
 
-/* Heart SVG icon styling */
-.fav-btn .heart-icon {
-  fill: none;
-  stroke: var(--text-muted);
-  stroke-width: 2;
-  transition: all var(--transition);
-}
-
-.fav-btn:hover .heart-icon {
-  stroke: var(--heart);
-}
-
-.fav-btn.fav-active .heart-icon {
-  fill: var(--heart);
-  stroke: var(--heart);
-}
-
-.card-action-btn.fav-active {
-  border-color: var(--heart);
-}
 
 /* Leitner Box Indicator */
 .card-box-indicator {
