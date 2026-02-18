@@ -517,6 +517,33 @@ body {
   text-align: center;
 }
 
+/* Learn filter row */
+.learn-filter-row {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.learn-filter-btn {
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.learn-filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.learn-filter-btn:hover {
+  border-color: var(--accent);
+}
+
 /* Flashcard area needs relative positioning for slide animations */
 .flashcard-area {
   position: relative;

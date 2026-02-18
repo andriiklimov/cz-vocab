@@ -5,9 +5,27 @@ const App = (() => {
   let words = [];
   let currentMode = 'all'; // all | favorites | category | reverse
   let currentCategory = null;
+  let learnFilter = 'due'; // 'all' | 'due' (due = new + not learned + due today)
 
   let currentCardIndex = 0;
   let gridVisible = false;
+  let cachedDeck = []; // stable shuffled deck for current filter
+
+  /* ---------- Shuffle (Fisher-Yates) ---------- */
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  /** Rebuild the shuffled deck — call when filters change */
+  function rebuildDeck() {
+    cachedDeck = shuffle(getFilteredWords());
+    currentCardIndex = 0;
+  }
 
   /* ---------- Init ---------- */
 
@@ -29,6 +47,7 @@ const App = (() => {
 
     // Build UI
     buildCategoryFilters();
+    rebuildDeck();
     renderFlashcard();
     renderCards();
     updateStats();
@@ -69,6 +88,14 @@ const App = (() => {
         break;
     }
 
+    // Learn filter: show only words that are not fully learned (box < 5) or due today
+    if (learnFilter === 'due') {
+      filtered = filtered.filter(w => {
+        const box = SpacedRepetition.getBox(w.id);
+        return box < SpacedRepetition.MAX_BOX || SpacedRepetition.isDueToday(w.id);
+      });
+    }
+
     return filtered;
   }
 
@@ -89,6 +116,7 @@ const App = (() => {
       if (modeBtn) modeBtn.classList.add('active');
     }
 
+    rebuildDeck();
     renderCards();
     renderFlashcard();
   }
@@ -135,7 +163,7 @@ const App = (() => {
     const counter = document.getElementById('flashcardCounter');
     if (!area) return;
 
-    const filtered = getFilteredWords();
+    const filtered = cachedDeck;
     if (filtered.length === 0) {
       area.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">Немає карток</div></div>`;
       if (counter) counter.textContent = '0 / 0';
@@ -175,7 +203,7 @@ const App = (() => {
     const grid = document.getElementById('cardGrid');
     if (!grid) return;
 
-    const filtered = getFilteredWords();
+    const filtered = cachedDeck;
     grid.innerHTML = '';
 
     if (filtered.length === 0) {
@@ -277,15 +305,19 @@ const App = (() => {
     // Review buttons
     container.querySelector('.review-btn.correct').addEventListener('click', (e) => {
       e.stopPropagation();
-      const result = SpacedRepetition.onCorrect(word.id);
-      renderFlashcard();
+      SpacedRepetition.onCorrect(word.id);
+      currentCardIndex++;
+      renderFlashcard('left');
+      updateStats();
       if (gridVisible) renderCards();
     });
 
     container.querySelector('.review-btn.wrong').addEventListener('click', (e) => {
       e.stopPropagation();
       SpacedRepetition.onWrong(word.id);
-      renderFlashcard();
+      currentCardIndex++;
+      renderFlashcard('left');
+      updateStats();
       if (gridVisible) renderCards();
     });
 
@@ -319,6 +351,25 @@ const App = (() => {
   function bindEvents() {
     // Theme toggle
     document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+
+    // Learn filter toggle
+    document.getElementById('learnFilterBtn')?.addEventListener('click', () => {
+      const btn = document.getElementById('learnFilterBtn');
+      if (learnFilter === 'due') {
+        learnFilter = 'all';
+        btn.textContent = '📚 Усі слова';
+        btn.classList.add('active');
+      } else {
+        learnFilter = 'due';
+        btn.textContent = '🎯 Для вивчення';
+        btn.classList.remove('active');
+      }
+      currentCardIndex = 0;
+      rebuildDeck();
+      renderFlashcard();
+      if (gridVisible) renderCards();
+      updateStats();
+    });
 
     // Mode buttons
     document.querySelectorAll('.filter-btn[data-mode]').forEach(btn => {

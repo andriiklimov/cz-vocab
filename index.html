@@ -14,7 +14,7 @@
   <script>
     // Force clear old service worker caches on version change
     (function() {
-      var CURRENT = 'v13';
+      var CURRENT = 'v14';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(function(regs) {
@@ -73,6 +73,9 @@
       <button class="flashcard-nav-btn" id="prevCard" title="Попередня">◀</button>
       <span class="flashcard-counter" id="flashcardCounter">1 / 20</span>
       <button class="flashcard-nav-btn" id="nextCard" title="Наступна">▶</button>
+    </div>
+    <div class="learn-filter-row">
+      <button class="learn-filter-btn" id="learnFilterBtn">🎯 Для вивчення</button>
     </div>
     <div class="flashcard-area" id="flashcardArea"></div>
   </section>
