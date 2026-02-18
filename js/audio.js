@@ -1,40 +1,68 @@
 /**
  * audio.js — Czech pronunciation via Google Translate TTS
- * Falls back to Web Speech API if Google TTS is unavailable
+ * Falls back to Web Speech API if unavailable
  */
 const Audio = (() => {
   let currentAudio = null;
+  let voicesLoaded = false;
 
   function init() {
-    // Nothing to initialize for Google TTS
+    // Pre-load voices for fallback
+    if ('speechSynthesis' in window) {
+      const loadVoices = () => {
+        window.speechSynthesis.getVoices();
+        voicesLoaded = true;
+      };
+      loadVoices();
+      if (window.speechSynthesis.onvoiceschanged !== undefined) {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+      }
+    }
   }
 
   /**
-   * Build Google Translate TTS URL for Czech text
-   */
-  function _buildGoogleTTSUrl(text) {
-    const encoded = encodeURIComponent(text);
-    return `https://translate.google.com/translate_tts?ie=UTF-8&tl=cs&client=tw-ob&q=${encoded}`;
-  }
-
-  /**
-   * Speak a Czech text string via Google Translate TTS
-   * @param {string} text - text to pronounce
+   * Speak Czech text — tries Google TTS first, then SpeechSynthesis
    */
   function speak(text) {
+    if (!text) return;
+
     // Stop any currently playing audio
     if (currentAudio) {
       currentAudio.pause();
+      currentAudio.currentTime = 0;
       currentAudio = null;
     }
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
 
-    const audio = new window.Audio(_buildGoogleTTSUrl(text));
+    // Try Google Translate TTS
+    const encoded = encodeURIComponent(text);
+    const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&tl=cs&client=gtx&q=${encoded}`;
+
+    const audio = new window.Audio();
+    audio.crossOrigin = 'anonymous';
     currentAudio = audio;
 
-    audio.play().catch(() => {
-      // Fallback to Web Speech API if Google TTS fails
+    audio.oncanplaythrough = () => {
+      audio.play().catch(() => _speakFallback(text));
+    };
+
+    audio.onerror = () => {
       _speakFallback(text);
-    });
+    };
+
+    // Timeout — if audio doesn't load in 3s, use fallback
+    const timeout = setTimeout(() => {
+      if (audio.readyState < 3) {
+        audio.src = '';
+        _speakFallback(text);
+      }
+    }, 3000);
+
+    audio.onended = () => clearTimeout(timeout);
+    audio.src = url;
+    audio.load();
   }
 
   /**
@@ -51,16 +79,15 @@ const Audio = (() => {
     utterance.rate = 0.85;
     utterance.pitch = 1;
 
+    // Try to find the best Czech voice
     const voices = synth.getVoices();
-    const czechVoice = voices.find(v => v.lang.startsWith('cs'));
+    const czechVoice = voices.find(v => v.lang === 'cs-CZ')
+      || voices.find(v => v.lang.startsWith('cs'));
     if (czechVoice) utterance.voice = czechVoice;
 
     synth.speak(utterance);
   }
 
-  /**
-   * Check if audio playback is available
-   */
   function isAvailable() {
     return typeof window.Audio === 'function' || 'speechSynthesis' in window;
   }
