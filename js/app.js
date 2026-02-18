@@ -60,9 +60,6 @@ const App = (() => {
 
     // Mode filter
     switch (currentMode) {
-      case 'due':
-        filtered = SpacedRepetition.getDueWords(filtered);
-        break;
       case 'favorites':
         filtered = filtered.filter(w => Storage.isFavorite(w.id));
         break;
