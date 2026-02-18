@@ -443,7 +443,7 @@
     "ukrainian": "швидко",
     "example": "Mluví velmi rychle.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -555,7 +555,7 @@
     "ukrainian": "ще",
     "example": "Chcete ještě něco?",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -751,7 +751,7 @@
     "ukrainian": "поки що, досі",
     "example": "Zatím je všechno v pořádku.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -849,7 +849,7 @@
     "ukrainian": "серйозний",
     "example": "To je vážný problém.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 2
   },
@@ -1003,7 +1003,7 @@
     "ukrainian": "гарний",
     "example": "To je krásný den.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -1199,7 +1199,7 @@
     "ukrainian": "задоволений",
     "example": "Jsem spokojený se svou prací.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 2
   },
@@ -1227,7 +1227,7 @@
     "ukrainian": "чудовий",
     "example": "To je úžasný nápad!",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1283,7 +1283,7 @@
     "ukrainian": "спритний",
     "example": "Je to šikovný člověk.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 2
   },
@@ -1451,7 +1451,7 @@
     "ukrainian": "здивований",
     "example": "Byl jsem překvapený tím dárkem.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 2
   },
@@ -1521,7 +1521,7 @@
     "ukrainian": "також",
     "example": "Já chci taky zmrzlinu!",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -1647,7 +1647,7 @@
     "ukrainian": "чеський",
     "example": "Český jazyk je krásný.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -1689,7 +1689,7 @@
     "ukrainian": "ретельно, уважно",
     "example": "Čtěte pečlivě instrukce.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1787,7 +1787,7 @@
     "ukrainian": "погано",
     "example": "Cítím se špatně.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -1857,7 +1857,7 @@
     "ukrainian": "мило / приємно (коротке e)",
     "example": "Bylo to mile překvapení.",
     "tags": [
-      "Опис"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1871,7 +1871,7 @@
     "ukrainian": "милі / дорогі (довге é)",
     "example": "Milé dámy a pánové.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 2
   },
@@ -1927,7 +1927,7 @@
     "ukrainian": "молодий (довге ý)",
     "example": "Je to mladý muž.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 1
   },
@@ -2067,7 +2067,7 @@
     "ukrainian": "добрий (довге ý)",
     "example": "Je to hodný člověk.",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 1
   },
@@ -2081,7 +2081,7 @@
     "ukrainian": "добрі (довге í)",
     "example": "Buďte hodní, děti!",
     "tags": [
-      "Опис"
+      "Люди"
     ],
     "difficulty": 2
   },
