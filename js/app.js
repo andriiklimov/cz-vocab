@@ -122,29 +122,16 @@ const App = (() => {
     const allTags = new Set();
     words.forEach(w => w.tags.forEach(t => allTags.add(t)));
 
-    const categoryLabels = {
-      greetings: 'Привітання',
-      polite: 'Ввічливість',
-      food: 'Їжа',
-      animals: 'Тварини',
-      numbers: 'Числа',
-      verbs: 'Дієслова',
-      adjectives: 'Прикметники',
-      phrases: 'Фрази',
-      professions: 'Професії',
-      countries: 'Країни',
-      phonetics: 'Фонетика',
-      everyday: 'Побут',
-      nature: 'Природа',
-      basic: 'Базові',
-    };
+    const tagOrder = ['Привітання','Їжа','Числа','Побут','Люди','Природа','Здоров\'я','Вимова','Слова'];
+    const sorted = tagOrder.filter(t => allTags.has(t));
+    // append any tags not in the predefined order
+    allTags.forEach(t => { if (!sorted.includes(t)) sorted.push(t); });
 
-    allTags.forEach(tag => {
-      if (tag === 'basic') return; // skip basic, it's a cross-cutting tag
+    sorted.forEach(tag => {
       const btn = document.createElement('button');
       btn.className = 'filter-btn';
       btn.dataset.category = tag;
-      btn.textContent = categoryLabels[tag] || tag;
+      btn.textContent = tag;
       btn.addEventListener('click', () => setMode('category', tag));
       row.appendChild(btn);
     });
