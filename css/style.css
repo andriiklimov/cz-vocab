@@ -249,12 +249,12 @@ button:focus-visible {
   gap: 0.4rem;
 }
 
-/* Top actions row — fav button */
-.card-top-actions {
+/* Word row — heart + czech word inline */
+.card-word-row {
   display: flex;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 0.3rem;
 }
 
 /* Floating speak button — right side, thumb-friendly */
@@ -263,12 +263,12 @@ button:focus-visible {
   right: 0.5rem;
   bottom: 50%;
   transform: translateY(50%);
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--bg-secondary);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -420,8 +420,24 @@ button:focus-visible {
   color: var(--accent);
 }
 
+/* Heart SVG icon styling */
+.fav-btn .heart-icon {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  transition: all var(--transition);
+}
+
+.fav-btn:hover .heart-icon {
+  stroke: var(--heart);
+}
+
+.fav-btn.fav-active .heart-icon {
+  fill: var(--heart);
+  stroke: var(--heart);
+}
+
 .card-action-btn.fav-active {
-  color: var(--heart);
   border-color: var(--heart);
 }
 
