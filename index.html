@@ -14,7 +14,7 @@
   <script>
     // Force clear old service worker caches on version change
     (function() {
-      var CURRENT = 'v12';
+      var CURRENT = 'v13';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(function(regs) {
@@ -40,9 +40,6 @@
     <button class="dismiss" id="installDismiss">✕</button>
   </div>
 
-  <!-- Theme toggle (floating) -->
-  <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
-
   <!-- Stats -->
   <section class="stats-bar">
     <div class="stat-item">
@@ -57,6 +54,7 @@
       <span class="stat-value" id="statDue">0</span>
       <span class="stat-label">На сьогодні</span>
     </div>
+    <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
   </section>
 
   <!-- Controls -->

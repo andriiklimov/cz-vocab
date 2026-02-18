@@ -278,7 +278,6 @@ const App = (() => {
     container.querySelector('.review-btn.correct').addEventListener('click', (e) => {
       e.stopPropagation();
       const result = SpacedRepetition.onCorrect(word.id);
-      showToast(`✓ Коробка ${result.box} з 5`);
       renderFlashcard();
       if (gridVisible) renderCards();
     });
@@ -286,7 +285,6 @@ const App = (() => {
     container.querySelector('.review-btn.wrong').addEventListener('click', (e) => {
       e.stopPropagation();
       SpacedRepetition.onWrong(word.id);
-      showToast('✗ Повернено до коробки 1');
       renderFlashcard();
       if (gridVisible) renderCards();
     });
