@@ -262,12 +262,10 @@ const App = (() => {
     container.innerHTML = `
       <div class="card-split">
         <div class="card-left">
-          <div class="card-word-row">
-            <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране" aria-label="Додати або видалити з обраного">
-              <svg class="heart-icon" viewBox="0 0 24 24" width="22" height="22"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
-            <div class="card-czech">${word.czech}</div>
-          </div>
+          <button class="card-fav-float fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране" aria-label="Додати або видалити з обраного">
+            <svg class="heart-icon" viewBox="0 0 24 24" width="22" height="22"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+          <div class="card-czech">${word.czech}</div>
           <div class="card-type">${word.type} ${genderLabel}</div>
           <div class="card-example-row">
             <span class="card-example">${word.example}</span>
