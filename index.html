@@ -5,12 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Чесько-українські картки для вивчення слів з інтервальним повторенням">
   <meta name="theme-color" content="#3b82f6">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>CZ-Vocab — Чеська лексика</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇨🇿</text></svg>">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Force clear old service worker caches on version change
+    (function() {
+      var CURRENT = 'v3';
+      if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            regs.forEach(function(r) { r.unregister(); });
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(function(keys) {
+            keys.forEach(function(k) { caches.delete(k); });
+          });
+        }
+        localStorage.setItem('czvocab_sw_ver', CURRENT);
+        setTimeout(function() { location.reload(true); }, 500);
+      }
+    })();
+  </script>
 </head>
 <body>
   <!-- Install Banner -->
