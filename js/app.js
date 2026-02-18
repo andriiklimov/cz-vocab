@@ -112,10 +112,18 @@ const App = (() => {
 
     const categoryLabels = {
       greetings: 'Привітання',
+      polite: 'Ввічливість',
       food: 'Їжа',
       animals: 'Тварини',
       numbers: 'Числа',
       verbs: 'Дієслова',
+      adjectives: 'Прикметники',
+      phrases: 'Фрази',
+      professions: 'Професії',
+      countries: 'Країни',
+      phonetics: 'Фонетика',
+      everyday: 'Побут',
+      nature: 'Природа',
       basic: 'Базові',
     };
 
@@ -132,7 +140,7 @@ const App = (() => {
 
   /* ---------- Single Flashcard Mode ---------- */
 
-  function renderFlashcard() {
+  function renderFlashcard(direction) {
     const area = document.getElementById('flashcardArea');
     const counter = document.getElementById('flashcardCounter');
     if (!area) return;
@@ -147,8 +155,27 @@ const App = (() => {
     if (currentCardIndex >= filtered.length) currentCardIndex = 0;
     if (currentCardIndex < 0) currentCardIndex = filtered.length - 1;
 
-    area.innerHTML = '';
-    area.appendChild(createCardElement(filtered[currentCardIndex]));
+    const newCard = createCardElement(filtered[currentCardIndex]);
+
+    // Slide animation if direction specified
+    if (direction && area.firstChild) {
+      const oldCard = area.firstChild;
+      const exitClass = direction === 'left' ? 'slide-out-left' : 'slide-out-right';
+      const enterClass = direction === 'left' ? 'slide-in-right' : 'slide-in-left';
+
+      oldCard.classList.add(exitClass);
+      newCard.classList.add(enterClass);
+      area.appendChild(newCard);
+
+      oldCard.addEventListener('animationend', () => {
+        oldCard.remove();
+        newCard.classList.remove(enterClass);
+      }, { once: true });
+    } else {
+      area.innerHTML = '';
+      area.appendChild(newCard);
+    }
+
     if (counter) counter.textContent = `${currentCardIndex + 1} / ${filtered.length}`;
   }
 
@@ -211,15 +238,28 @@ const App = (() => {
           </div>
           <div class="card-box-indicator">${pips}</div>
         </div>
-        <div class="card-right">
-          <div class="card-transcription">[${word.transcription}]</div>
-          <div class="card-ukrainian">${word.ukrainian}</div>
-          <div class="review-buttons">
-            <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗ Не знаю</button>
-            <button class="review-btn correct" data-word-id="${word.id}" title="Знаю">✓ Знаю</button>
+        <div class="card-right" data-revealed="false">
+          <div class="card-answer-hidden">
+            <div class="reveal-placeholder">?</div>
+            <div class="reveal-hint">натисни щоб побачити</div>
+          </div>
+          <div class="card-answer-revealed">
+            <div class="card-transcription">[${word.transcription}]</div>
+            <div class="card-ukrainian">${word.ukrainian}</div>
+            <div class="review-buttons">
+              <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗ Не знаю</button>
+              <button class="review-btn correct" data-word-id="${word.id}" title="Знаю">✓ Знаю</button>
+            </div>
           </div>
         </div>
       </div>`;
+
+    // Reveal translation on right panel click
+    const rightPanel = container.querySelector('.card-right');
+    rightPanel.addEventListener('click', (e) => {
+      if (e.target.closest('.review-btn')) return;
+      rightPanel.dataset.revealed = 'true';
+    });
 
     // Favorite toggle
     container.querySelector('.fav-btn').addEventListener('click', (e) => {
@@ -310,12 +350,12 @@ const App = (() => {
     // Flashcard navigation
     document.getElementById('prevCard')?.addEventListener('click', () => {
       currentCardIndex--;
-      renderFlashcard();
+      renderFlashcard('right');
     });
 
     document.getElementById('nextCard')?.addEventListener('click', () => {
       currentCardIndex++;
-      renderFlashcard();
+      renderFlashcard('left');
     });
 
     // Show all toggle
@@ -352,11 +392,12 @@ const App = (() => {
           if (diffX > 0) {
             // Swipe left → next card
             currentCardIndex++;
+            renderFlashcard('left');
           } else {
             // Swipe right → previous card
             currentCardIndex--;
+            renderFlashcard('right');
           }
-          renderFlashcard();
         }
       }, { passive: true });
     }

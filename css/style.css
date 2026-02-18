@@ -362,7 +362,47 @@ body {
   margin-top: 0.3rem;
 }
 
-/* Right panel */
+/* Right panel — hidden/revealed answer */
+.card-right {
+  cursor: pointer;
+}
+
+.card-answer-hidden {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1rem 0;
+}
+
+.card-right[data-revealed="true"] .card-answer-hidden {
+  display: none;
+}
+
+.card-answer-revealed {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-right[data-revealed="true"] .card-answer-revealed {
+  display: flex;
+}
+
+.reveal-placeholder {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.reveal-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .card-transcription {
   font-size: 1.1rem;
   color: var(--text-muted);
@@ -522,6 +562,53 @@ body {
   color: var(--text-secondary);
   min-width: 60px;
   text-align: center;
+}
+
+/* Flashcard area needs relative positioning for slide animations */
+.flashcard-area {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slide animations */
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(60%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-60%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.25s ease forwards;
+  position: absolute;
+  width: 100%;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.25s ease forwards;
+  position: absolute;
+  width: 100%;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.25s ease forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.25s ease forwards;
 }
 
 /* ===== Show All Toggle ===== */

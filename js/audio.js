@@ -1,35 +1,33 @@
 /**
  * audio.js — Czech pronunciation
- * Strategy: Google TTS via <audio> with error/timeout fallback to SpeechSynthesis.
- * On PC browsers (Edge/Chrome) Google TTS is often blocked by tracking prevention,
- * so we detect failure quickly and fall back to SpeechSynthesis.
+ * Primary: Google TTS via <audio> element (works great on mobile).
+ * Fallback: Web Speech API for PC browsers where Google TTS is blocked.
  */
 const Audio = (() => {
   let audioEl = null;
   let voices = [];
   let czechVoice = null;
-  let synthReady = false;
+  let googleBlocked = false; // remember if Google TTS failed
 
   function init() {
-    // Create a persistent audio element in the DOM
+    // Persistent audio element
     audioEl = document.createElement('audio');
     audioEl.id = 'ttsAudio';
     audioEl.style.display = 'none';
     document.body.appendChild(audioEl);
 
-    // Pre-load SpeechSynthesis voices
+    // Pre-load SpeechSynthesis voices for fallback
     if ('speechSynthesis' in window) {
       const loadV = () => {
         voices = speechSynthesis.getVoices();
-        czechVoice = voices.find(v => v.lang === 'cs-CZ' && /online|neural/i.test(v.name))
+        czechVoice = voices.find(v => v.lang === 'cs-CZ' && /online|neural|zuzana|iveta/i.test(v.name))
           || voices.find(v => v.lang === 'cs-CZ')
           || voices.find(v => v.lang.startsWith('cs'))
           || null;
-        synthReady = voices.length > 0;
       };
       loadV();
       speechSynthesis.onvoiceschanged = loadV;
-      setTimeout(loadV, 200);
+      setTimeout(loadV, 250);
       setTimeout(loadV, 1000);
     }
   }
@@ -37,49 +35,29 @@ const Audio = (() => {
   function speak(text) {
     if (!text) return;
 
-    // Try Google TTS first via <audio> element
+    // If we already know Google is blocked on this device, skip straight to synth
+    if (googleBlocked) {
+      speakSynth(text);
+      return;
+    }
+
+    // Try Google TTS
     const url = 'https://translate.googleapis.com/translate_tts'
       + '?ie=UTF-8&tl=cs&client=gtx&q=' + encodeURIComponent(text);
 
-    // Set a timeout: if audio doesn't start playing within 1.5s, use fallback
-    let resolved = false;
-    const fallbackTimer = setTimeout(() => {
-      if (!resolved) {
-        resolved = true;
-        audioEl.pause();
-        audioEl.removeAttribute('src');
-        speakSynth(text);
-      }
-    }, 1500);
-
-    // On successful play
-    const onPlaying = () => {
-      resolved = true;
-      clearTimeout(fallbackTimer);
-      cleanup();
+    audioEl.onerror = () => {
+      googleBlocked = true;
+      speakSynth(text);
     };
-
-    // On any error
-    const onError = () => {
-      if (!resolved) {
-        resolved = true;
-        clearTimeout(fallbackTimer);
-        cleanup();
-        speakSynth(text);
-      }
-    };
-
-    function cleanup() {
-      audioEl.removeEventListener('playing', onPlaying);
-      audioEl.removeEventListener('error', onError);
-    }
-
-    audioEl.addEventListener('playing', onPlaying, { once: true });
-    audioEl.addEventListener('error', onError, { once: true });
 
     audioEl.src = url;
     const p = audioEl.play();
-    if (p && p.catch) p.catch(onError);
+    if (p && p.catch) {
+      p.catch(() => {
+        googleBlocked = true;
+        speakSynth(text);
+      });
+    }
   }
 
   function speakSynth(text) {
@@ -88,10 +66,9 @@ const Audio = (() => {
     const synth = window.speechSynthesis;
     synth.cancel();
 
-    // Delay after cancel to avoid Chrome silent-speak bug
     setTimeout(() => {
-      // Re-check voices
-      if (!synthReady) {
+      // Refresh voices if needed
+      if (!voices.length) {
         voices = synth.getVoices();
         czechVoice = voices.find(v => v.lang === 'cs-CZ')
           || voices.find(v => v.lang.startsWith('cs'))
@@ -100,20 +77,20 @@ const Audio = (() => {
 
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = 'cs-CZ';
-      utter.rate = 0.9;
+      utter.rate = 0.85;
       utter.pitch = 1;
       if (czechVoice) utter.voice = czechVoice;
 
       synth.speak(utter);
 
-      // Chrome resume workaround for long utterances
+      // Chrome resume workaround
       const timer = setInterval(() => {
         if (!synth.speaking) clearInterval(timer);
         else synth.resume();
       }, 5000);
       utter.onend = () => clearInterval(timer);
       utter.onerror = () => clearInterval(timer);
-    }, 150);
+    }, 120);
   }
 
   function isAvailable() {
