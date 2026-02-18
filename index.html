@@ -14,7 +14,7 @@
   <script>
     // Force clear old service worker caches on version change
     (function() {
-      var CURRENT = 'v8';
+      var CURRENT = 'v9';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(function(regs) {
@@ -72,10 +72,6 @@
 
   <!-- Controls -->
   <section class="controls">
-    <div class="search-bar">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="searchInput" placeholder="Шукати слово..." autocomplete="off">
-    </div>
     <div class="filter-row">
       <button class="filter-btn active" data-mode="all">Усі</button>
       <button class="filter-btn" data-mode="favorites">⭐ Обране</button>

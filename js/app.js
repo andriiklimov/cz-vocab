@@ -5,7 +5,7 @@ const App = (() => {
   let words = [];
   let currentMode = 'all'; // all | favorites | category | reverse
   let currentCategory = null;
-  let searchQuery = '';
+
   let currentCardIndex = 0;
   let gridVisible = false;
 
@@ -67,16 +67,6 @@ const App = (() => {
           filtered = filtered.filter(w => w.tags.includes(currentCategory));
         }
         break;
-    }
-
-    // Search filter
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      filtered = filtered.filter(w =>
-        w.czech.toLowerCase().includes(q) ||
-        w.ukrainian.toLowerCase().includes(q) ||
-        w.transcription.toLowerCase().includes(q)
-      );
     }
 
     return filtered;
@@ -333,14 +323,6 @@ const App = (() => {
   function bindEvents() {
     // Theme toggle
     document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
-
-    // Search
-    document.getElementById('searchInput')?.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      currentCardIndex = 0;
-      renderFlashcard();
-      if (gridVisible) renderCards();
-    });
 
     // Mode buttons
     document.querySelectorAll('.filter-btn[data-mode]').forEach(btn => {

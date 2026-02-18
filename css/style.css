@@ -172,41 +172,7 @@ body {
   gap: 0.75rem;
 }
 
-.search-bar {
-  position: relative;
-}
 
-.search-bar input {
-  width: 100%;
-  padding: 0.7rem 1rem 0.7rem 2.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  font-family: var(--font);
-  transition: all var(--transition);
-  outline: none;
-}
-
-.search-bar input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-light);
-}
-
-.search-bar input::placeholder {
-  color: var(--text-muted);
-}
-
-.search-icon {
-  position: absolute;
-  left: 0.85rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  font-size: 1rem;
-  pointer-events: none;
-}
 
 .filter-row {
   display: flex;
