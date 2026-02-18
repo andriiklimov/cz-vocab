@@ -242,7 +242,7 @@ body {
   gap: 0.4rem;
 }
 
-/* Top actions row — speaker + fav side by side */
+/* Top actions row — fav button */
 .card-top-actions {
   display: flex;
   gap: 0.4rem;
@@ -250,20 +250,38 @@ body {
   margin-bottom: 0.3rem;
 }
 
-/* Example sentence with inline speaker */
+/* Floating speak button — right side, thumb-friendly */
+.card-speak-float {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  z-index: 2;
+}
+
+.card-speak-float:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+/* Example sentence */
 .card-example-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   margin-top: 0.3rem;
-}
-
-.card-example-row .speak-example-btn {
-  width: 30px;
-  height: 30px;
-  font-size: 0.85rem;
-  flex-shrink: 0;
 }
 
 /* Front */

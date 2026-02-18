@@ -243,7 +243,6 @@ const App = (() => {
       <div class="card-split">
         <div class="card-left">
           <div class="card-top-actions">
-            <button class="card-action-btn speak-btn" data-czech="${word.czech}" title="Вимова">🔊</button>
             <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране">
               ${isFav ? '❤️' : '🤍'}
             </button>
@@ -252,9 +251,9 @@ const App = (() => {
           <div class="card-type">${word.type} ${genderLabel}</div>
           <div class="card-example-row">
             <span class="card-example">${word.example}</span>
-            <button class="card-action-btn speak-example-btn" data-czech="${word.example}" title="Вимова прикладу">🔊</button>
           </div>
           <div class="card-box-indicator">${pips}</div>
+          <button class="card-speak-float speak-btn" data-czech="${word.czech}" title="Вимова">🔊</button>
         </div>
         <div class="card-right" data-revealed="false">
           <div class="card-answer-hidden">
@@ -295,7 +294,7 @@ const App = (() => {
     });
 
     // Speak buttons (word + example)
-    container.querySelectorAll('.speak-btn, .speak-example-btn').forEach(btn => {
+    container.querySelectorAll('.speak-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         Audio.speak(btn.dataset.czech);
