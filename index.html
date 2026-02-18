@@ -14,7 +14,7 @@
   <script>
     // Force clear old service worker caches on version change
     (function() {
-      var CURRENT = 'v5';
+      var CURRENT = 'v6';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(function(regs) {
@@ -79,7 +79,6 @@
     <div class="filter-row">
       <button class="filter-btn active" data-mode="all">Усі</button>
       <button class="filter-btn" data-mode="favorites">⭐ Обране</button>
-      <button class="filter-btn" data-mode="reverse">🔄 Зворотній</button>
       <!-- Category filters will be appended here -->
       <span id="categoryFilters" style="display:contents"></span>
     </div>

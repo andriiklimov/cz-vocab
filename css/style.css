@@ -268,141 +268,115 @@ body {
 
 /* ===== Card ===== */
 .card-container {
-  perspective: 1000px;
-  height: 280px;
+  min-height: 0;
 }
 
-.card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card.flipped {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+.card-split {
+  display: flex;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  transition: border-color var(--transition), box-shadow var(--transition);
   overflow: hidden;
+  transition: box-shadow var(--transition);
 }
 
-.card-container:hover .card-face {
+.card-container:hover .card-split {
   box-shadow: var(--shadow-lg);
 }
 
-.card-front {
+.card-left {
+  flex: 1;
   background: var(--bg-card);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap: 0.35rem;
+  position: relative;
+  border-right: 1px solid var(--border);
 }
 
-.card-back {
+.card-right {
+  flex: 1;
   background: var(--bg-card-back);
-  transform: rotateY(180deg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.4rem;
+}
+
+.card-left .speak-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}
+
+.card-left-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 /* Front */
 .card-czech {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.15rem;
 }
 
 .card-type {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .card-gender {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--accent);
   font-weight: 600;
 }
 
-.card-difficulty {
-  display: flex;
-  gap: 3px;
-  margin-top: 0.5rem;
+.card-example {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 0.3rem;
 }
 
-.card-difficulty .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--border);
-}
-
-.card-difficulty .dot.filled {
-  background: var(--accent);
-}
-
-/* Back */
+/* Right panel */
 .card-transcription {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  margin-bottom: 0.2rem;
 }
 
 .card-ukrainian {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.card-example {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  flex: 1;
-}
-
-.card-example-ukr {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-top: 0.25rem;
 }
 
 /* Card Actions */
-.card-actions {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
-  display: flex;
-  gap: 0.35rem;
-  z-index: 5;
-}
-
 .card-action-btn {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   transition: all var(--transition);
   color: var(--text-muted);
 }
@@ -419,33 +393,19 @@ body {
 
 /* Leitner Box Indicator */
 .card-box-indicator {
-  position: absolute;
-  bottom: 0.6rem;
-  right: 0.6rem;
   display: flex;
   gap: 3px;
 }
 
 .box-pip {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 2px;
   background: var(--border);
 }
 
 .box-pip.filled {
   background: var(--success);
-}
-
-/* Reverse mode card front */
-.card-front.reverse-mode {
-  background: var(--bg-card-back);
-}
-
-.card-ukr-front {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
 }
 
 /* ===== Leitner Review Buttons ===== */
@@ -457,12 +417,12 @@ body {
 }
 
 .review-btn {
-  padding: 0.3rem 0.7rem;
+  padding: 0.4rem 1rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--bg-secondary);
   color: var(--text-secondary);
-  font-size: 0.78rem;
+  font-size: 1.1rem;
   font-family: var(--font);
   cursor: pointer;
   transition: all var(--transition);
@@ -507,7 +467,7 @@ body {
 
 /* ===== Flashcard Single Mode ===== */
 .flashcard-section {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0.5rem 1.25rem 0;
 }
@@ -547,10 +507,6 @@ body {
   color: var(--text-secondary);
   min-width: 60px;
   text-align: center;
-}
-
-.flashcard-area .card-container {
-  height: 320px;
 }
 
 /* ===== Show All Toggle ===== */
@@ -611,6 +567,20 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .card-split {
+    flex-direction: column;
+  }
+
+  .card-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+  }
+
+  .card-right {
+    padding: 1rem;
+  }
+
   .stats-bar {
     gap: 0.5rem;
   }
@@ -633,6 +603,10 @@ body {
 
   .card-grid {
     padding: 0.75rem 1rem;
+  }
+
+  .flashcard-section {
+    padding: 0.5rem 0.75rem 0;
   }
 }
 

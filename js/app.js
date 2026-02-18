@@ -184,12 +184,6 @@ const App = (() => {
 
     const box = SpacedRepetition.getBox(word.id);
     const isFav = Storage.isFavorite(word.id);
-    const isReverse = currentMode === 'reverse';
-
-    // Difficulty dots
-    const dots = Array.from({ length: 3 }, (_, i) =>
-      `<span class="dot ${i < word.difficulty ? 'filled' : ''}"></span>`
-    ).join('');
 
     // Box pips
     const pips = Array.from({ length: 5 }, (_, i) =>
@@ -200,55 +194,29 @@ const App = (() => {
     const genderMap = { m: 'муж.', f: 'жін.', n: 'сер.' };
     const genderLabel = word.gender ? `<span class="card-gender">${genderMap[word.gender] || ''}</span>` : '';
 
-    const frontContent = isReverse
-      ? `<div class="card-ukr-front">${word.ukrainian}</div>
-         <div class="card-type">${word.type}</div>`
-      : `<div class="card-czech">${word.czech}</div>
-         <div class="card-type">${word.type} ${genderLabel}</div>
-         <div class="card-difficulty">${dots}</div>`;
-
-    const backContent = isReverse
-      ? `<div class="card-czech" style="font-size:1.4rem;margin-bottom:0.25rem">${word.czech}</div>
-         <div class="card-transcription">[${word.transcription}]</div>
-         ${genderLabel ? `<div style="font-size:0.78rem;color:var(--accent);margin-bottom:0.5rem">${genderMap[word.gender]}</div>` : ''}
-         <div class="card-example">${word.example}</div>
-         <div class="card-example-ukr">${word.exampleUkr}</div>`
-      : `<div class="card-transcription">[${word.transcription}]</div>
-         <div class="card-ukrainian">${word.ukrainian}</div>
-         <div class="card-example">${word.example}</div>
-         <div class="card-example-ukr">${word.exampleUkr}</div>`;
-
     container.innerHTML = `
-      <div class="card">
-        <div class="card-face card-front ${isReverse ? 'reverse-mode' : ''}">
-          <div class="card-actions">
+      <div class="card-split">
+        <div class="card-left">
+          <button class="card-action-btn speak-btn" data-czech="${word.czech}" title="Вимова">🔊</button>
+          <div class="card-czech">${word.czech}</div>
+          <div class="card-type">${word.type} ${genderLabel}</div>
+          <div class="card-example">${word.example}</div>
+          <div class="card-left-bottom">
             <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране">
               ${isFav ? '❤️' : '🤍'}
             </button>
-            <button class="card-action-btn speak-btn" data-czech="${word.czech}" title="Вимова">
-              🔊
-            </button>
+            <div class="card-box-indicator">${pips}</div>
           </div>
-          ${frontContent}
-          <div class="card-box-indicator">${pips}</div>
         </div>
-        <div class="card-face card-back">
-          ${backContent}
+        <div class="card-right">
+          <div class="card-transcription">[${word.transcription}]</div>
+          <div class="card-ukrainian">${word.ukrainian}</div>
           <div class="review-buttons">
-            <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗ Не знаю</button>
-            <button class="review-btn correct" data-word-id="${word.id}" title="Знаю">✓ Знаю</button>
+            <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗</button>
+            <button class="review-btn correct" data-word-id="${word.id}" title="Знаю">✓</button>
           </div>
-          <div class="card-box-indicator">${pips}</div>
         </div>
       </div>`;
-
-    // Card flip
-    const card = container.querySelector('.card');
-    container.addEventListener('click', (e) => {
-      // Don't flip when clicking buttons
-      if (e.target.closest('.card-action-btn') || e.target.closest('.review-btn')) return;
-      card.classList.toggle('flipped');
-    });
 
     // Favorite toggle
     container.querySelector('.fav-btn').addEventListener('click', (e) => {

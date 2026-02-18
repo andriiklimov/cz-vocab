@@ -1,73 +1,89 @@
 /**
- * audio.js — Czech pronunciation via Web Speech API
+ * audio.js — Czech pronunciation
+ * Strategy: try Google TTS via hidden <audio> element first,
+ * fallback to Web Speech API with delay workarounds.
  */
 const Audio = (() => {
+  let audioEl = null;
   let voices = [];
   let czechVoice = null;
-  let ready = false;
 
   function init() {
-    if (!('speechSynthesis' in window)) return;
+    // Create a persistent audio element in the DOM
+    audioEl = document.createElement('audio');
+    audioEl.id = 'ttsAudio';
+    audioEl.style.display = 'none';
+    document.body.appendChild(audioEl);
 
-    const synth = window.speechSynthesis;
-
-    function loadVoices() {
-      voices = synth.getVoices();
-      // Pick best Czech voice: prefer Online/Neural voices
-      czechVoice = voices.find(v => v.lang === 'cs-CZ' && /online|neural/i.test(v.name))
-        || voices.find(v => v.lang === 'cs-CZ')
-        || voices.find(v => v.lang.startsWith('cs'))
-        || null;
-      ready = voices.length > 0;
+    // Pre-load SpeechSynthesis voices as fallback
+    if ('speechSynthesis' in window) {
+      const loadV = () => {
+        voices = speechSynthesis.getVoices();
+        czechVoice = voices.find(v => v.lang === 'cs-CZ' && /online|neural/i.test(v.name))
+          || voices.find(v => v.lang === 'cs-CZ')
+          || voices.find(v => v.lang.startsWith('cs'))
+          || null;
+      };
+      loadV();
+      speechSynthesis.onvoiceschanged = loadV;
+      setTimeout(loadV, 200);
+      setTimeout(loadV, 1000);
     }
-
-    loadVoices();
-    synth.onvoiceschanged = loadVoices;
-
-    // Chrome/Edge sometimes need a dummy call to activate
-    setTimeout(loadVoices, 100);
-    setTimeout(loadVoices, 500);
   }
 
   function speak(text) {
-    if (!text || !('speechSynthesis' in window)) return;
+    if (!text) return;
+
+    // Try Google TTS first — works in most browsers
+    const url = 'https://translate.googleapis.com/translate_tts'
+      + '?ie=UTF-8&tl=cs&client=gtx&q=' + encodeURIComponent(text);
+
+    audioEl.src = url;
+    const playPromise = audioEl.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Google TTS blocked (tracking prevention etc.) — fallback to SpeechSynthesis
+        speakFallback(text);
+      });
+    }
+  }
+
+  function speakFallback(text) {
+    if (!('speechSynthesis' in window)) return;
 
     const synth = window.speechSynthesis;
-
-    // Chrome bug: synth gets stuck, cancel first
     synth.cancel();
 
-    // Reload voices if not loaded yet
-    if (!ready) {
-      voices = synth.getVoices();
-      czechVoice = voices.find(v => v.lang === 'cs-CZ')
-        || voices.find(v => v.lang.startsWith('cs'))
-        || null;
-    }
-
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = 'cs-CZ';
-    utter.rate = 0.9;
-    utter.pitch = 1;
-    if (czechVoice) utter.voice = czechVoice;
-
-    synth.speak(utter);
-
-    // Chrome bug workaround: long texts get cut off
-    let resumeTimer = setInterval(() => {
-      if (!synth.speaking) {
-        clearInterval(resumeTimer);
-      } else {
-        synth.resume();
+    // Small delay after cancel() to avoid Chrome/Edge silent-speak bug
+    setTimeout(() => {
+      if (!voices.length) {
+        voices = synth.getVoices();
+        czechVoice = voices.find(v => v.lang === 'cs-CZ')
+          || voices.find(v => v.lang.startsWith('cs'))
+          || null;
       }
-    }, 5000);
 
-    utter.onend = () => clearInterval(resumeTimer);
-    utter.onerror = () => clearInterval(resumeTimer);
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'cs-CZ';
+      utter.rate = 0.9;
+      utter.pitch = 1;
+      if (czechVoice) utter.voice = czechVoice;
+
+      synth.speak(utter);
+
+      // Chrome resume workaround
+      const timer = setInterval(() => {
+        if (!synth.speaking) clearInterval(timer);
+        else synth.resume();
+      }, 5000);
+      utter.onend = () => clearInterval(timer);
+      utter.onerror = () => clearInterval(timer);
+    }, 100);
   }
 
   function isAvailable() {
-    return 'speechSynthesis' in window;
+    return true; // always available — we have multiple strategies
   }
 
   return { init, speak, isAvailable };
