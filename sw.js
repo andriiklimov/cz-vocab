@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cz-vocab-v4';
+const CACHE_NAME = 'cz-vocab-v5';
 const ASSETS = [
   './',
   './index.html',
