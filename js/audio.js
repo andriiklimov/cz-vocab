@@ -45,19 +45,28 @@ const Audio = (() => {
     const url = 'https://translate.googleapis.com/translate_tts'
       + '?ie=UTF-8&tl=cs&client=gtx&q=' + encodeURIComponent(text);
 
+    // Stop any current playback first
+    audioEl.pause();
+    audioEl.removeAttribute('src');
+    audioEl.load();
+
     audioEl.onerror = () => {
       googleBlocked = true;
       speakSynth(text);
     };
 
+    audioEl.oncanplaythrough = () => {
+      audioEl.oncanplaythrough = null;
+      const p = audioEl.play();
+      if (p && p.catch) {
+        p.catch(() => {
+          googleBlocked = true;
+          speakSynth(text);
+        });
+      }
+    };
+
     audioEl.src = url;
-    const p = audioEl.play();
-    if (p && p.catch) {
-      p.catch(() => {
-        googleBlocked = true;
-        speakSynth(text);
-      });
-    }
   }
 
   function speakSynth(text) {
