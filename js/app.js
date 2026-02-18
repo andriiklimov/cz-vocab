@@ -298,19 +298,16 @@ const App = (() => {
   function updateStats() {
     const totalEl = document.getElementById('statTotal');
     const learnedEl = document.getElementById('statLearned');
-    const streakEl = document.getElementById('statStreak');
     const dueEl = document.getElementById('statDue');
     const dueBadge = document.getElementById('dueBadge');
 
     const total = words.length;
     const learned = SpacedRepetition.getLearnedCount(words);
-    const streak = Storage.getStreak();
     const dueCount = SpacedRepetition.getDueCount(words);
     const pct = total > 0 ? Math.round((learned / total) * 100) : 0;
 
     if (totalEl) totalEl.textContent = total;
     if (learnedEl) learnedEl.textContent = `${pct}%`;
-    if (streakEl) streakEl.textContent = streak.count;
     if (dueEl) dueEl.textContent = dueCount;
     if (dueBadge) {
       dueBadge.textContent = dueCount;

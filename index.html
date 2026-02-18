@@ -14,7 +14,7 @@
   <script>
     // Force clear old service worker caches on version change
     (function() {
-      var CURRENT = 'v9';
+      var CURRENT = 'v10';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(function(regs) {
@@ -59,10 +59,6 @@
     <div class="stat-item">
       <span class="stat-value" id="statLearned">0%</span>
       <span class="stat-label">Вивчено</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-value" id="statStreak">0</span>
-      <span class="stat-label">Серія днів</span>
     </div>
     <div class="stat-item">
       <span class="stat-value" id="statDue">0</span>
