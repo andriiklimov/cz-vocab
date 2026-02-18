@@ -263,28 +263,20 @@ button:focus-visible {
   gap: 0.4rem;
 }
 
-/* Floating fav (heart) button — left side, mirrors speaker */
-.card-fav-float {
-  position: absolute;
-  left: 0.5rem;
-  bottom: 50%;
-  transform: translateY(50%);
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--bg-secondary);
-  cursor: pointer;
+/* Word row — heart inline left of czech word */
+.card-word-row {
   display: flex;
   align-items: center;
+  gap: 0.35rem;
   justify-content: center;
-  transition: all var(--transition);
-  z-index: 2;
 }
 
-.card-fav-float:hover {
-  background: var(--accent-light);
-  border-color: var(--accent);
+.card-word-row .fav-btn {
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 0.25rem;
 }
 
 /* Floating speak button — right side, thumb-friendly */
