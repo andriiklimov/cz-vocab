@@ -208,7 +208,7 @@ const App = (() => {
           <div class="card-type">${word.type} ${genderLabel}</div>
           <div class="card-example-row">
             <span class="card-example">${word.example}</span>
-            <button class="card-action-btn speak-btn" data-czech="${word.example}" title="Вимова фрази" aria-label="Відтворити вимову фрази"><svg class="speak-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            <button class="card-action-btn speak-btn" data-czech="${word.example}" title="Вимова фрази" aria-label="Відтворити вимову фрази"><svg class="speak-icon" viewBox="0 0 24 24" width="14" height="14"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
           </div>
           <button class="card-speak-float speak-btn" data-czech="${word.czech}" title="Вимова" aria-label="Відтворити вимову"><svg class="speak-icon" viewBox="0 0 24 24" width="28" height="28"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
         </div>
