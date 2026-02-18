@@ -316,9 +316,23 @@ body {
 }
 
 .card-gender {
-  font-size: 0.82rem;
-  color: var(--accent);
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.gender-ma,
+.gender-mi {
+  color: #2196F3;
+}
+
+.gender-f {
+  color: #E91E63;
+}
+
+.gender-n {
+  color: #4CAF50;
 }
 
 .card-example {

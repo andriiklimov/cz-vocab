@@ -1,161 +1,2286 @@
-﻿[
-  {"id":"w001","czech":"dobrý den","gender":null,"type":"phrase","transcription":"dobree den","ukrainian":"добрий день","example":"Dobrý den, jak se máte?","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w002","czech":"ahoj","gender":null,"type":"interjection","transcription":"ahoy","ukrainian":"привіт","example":"Ahoj, jak se máš?","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w003","czech":"děkuji","gender":null,"type":"verb","transcription":"dyekuyi","ukrainian":"дякую","example":"Děkuji za pomoc.","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w004","czech":"prosím","gender":null,"type":"particle","transcription":"proseem","ukrainian":"будь ласка","example":"Prosím, podejte mi sůl.","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w005","czech":"na shledanou","gender":null,"type":"phrase","transcription":"na skhledanou","ukrainian":"до побачення","example":"Na shledanou, bylo to hezké.","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w006","czech":"chleba","gender":"m","type":"noun","transcription":"khleba","ukrainian":"хліб","example":"Koupil jsem čerstvý chleba.","tags":["food","basic"],"difficulty":1},
-  {"id":"w007","czech":"mléko","gender":"n","type":"noun","transcription":"mleeko","ukrainian":"молоко","example":"Dáte si mléko do kávy?","tags":["food","basic"],"difficulty":1},
-  {"id":"w008","czech":"voda","gender":"f","type":"noun","transcription":"voda","ukrainian":"вода","example":"Chci sklenici vody.","tags":["food","basic"],"difficulty":1},
-  {"id":"w009","czech":"káva","gender":"f","type":"noun","transcription":"kaava","ukrainian":"кава","example":"Dám si kávu s mlékem.","tags":["food","basic"],"difficulty":1},
-  {"id":"w010","czech":"pivo","gender":"n","type":"noun","transcription":"pivo","ukrainian":"пиво","example":"České pivo je výborné.","tags":["food","basic"],"difficulty":1},
-  {"id":"w011","czech":"kočka","gender":"f","type":"noun","transcription":"kochka","ukrainian":"кішка","example":"Kočka spí na gauči.","tags":["animals","basic"],"difficulty":1},
-  {"id":"w012","czech":"pes","gender":"m","type":"noun","transcription":"pes","ukrainian":"пес / собака","example":"Pes běží v parku.","tags":["animals","basic"],"difficulty":1},
-  {"id":"w013","czech":"pták","gender":"m","type":"noun","transcription":"ptaak","ukrainian":"птах","example":"Pták zpívá na stromě.","tags":["animals","basic"],"difficulty":1},
-  {"id":"w014","czech":"jedna","gender":"f","type":"numeral","transcription":"yedna","ukrainian":"один / одна","example":"Mám jednu sestru.","tags":["numbers","basic"],"difficulty":1},
-  {"id":"w015","czech":"dva","gender":"m","type":"numeral","transcription":"dva","ukrainian":"два","example":"Mám dva bratry.","tags":["numbers","basic"],"difficulty":1},
-  {"id":"w016","czech":"tři","gender":null,"type":"numeral","transcription":"trzhee","ukrainian":"три","example":"Jsou tři hodiny.","tags":["numbers","basic"],"difficulty":1},
-  {"id":"w017","czech":"mluvit","gender":null,"type":"verb","transcription":"mloovit","ukrainian":"говорити","example":"Umíte mluvit česky?","tags":["verbs","basic"],"difficulty":2},
-  {"id":"w018","czech":"jíst","gender":null,"type":"verb","transcription":"yeest","ukrainian":"їсти","example":"Chci jíst oběd.","tags":["verbs","basic"],"difficulty":2},
-  {"id":"w019","czech":"pít","gender":null,"type":"verb","transcription":"peet","ukrainian":"пити","example":"Musíte pít hodně vody.","tags":["verbs","basic"],"difficulty":2},
-  {"id":"w020","czech":"rozumět","gender":null,"type":"verb","transcription":"rozumyet","ukrainian":"розуміти","example":"Rozumíte česky?","tags":["verbs","basic"],"difficulty":2},
-  {"id":"w021","czech":"opakujte prosím","gender":null,"type":"phrase","transcription":"opakuyte proseem","ukrainian":"повторіть, будь ласка","example":"Opakujte prosím, nerozuměl jsem.","tags":["phrases","basic"],"difficulty":1},
-  {"id":"w022","czech":"Národní třída","gender":"f","type":"noun","transcription":"naarodnee trheeda","ukrainian":"Національний проспект","example":"Sejdeme se na Národní třídě.","tags":["places"],"difficulty":2},
-  {"id":"w023","czech":"Česká národní banka","gender":"f","type":"noun","transcription":"cheskaa naarodnee banka","ukrainian":"Чеський національний банк","example":"Česká národní banka je v Praze.","tags":["places"],"difficulty":2},
-  {"id":"w024","czech":"zkuste to přeložit","gender":null,"type":"phrase","transcription":"zkuste to przhelozhit","ukrainian":"спробуйте це перекласти","example":"Zkuste to přeložit do češtiny.","tags":["phrases"],"difficulty":2},
-  {"id":"w025","czech":"pět","gender":null,"type":"numeral","transcription":"pyet","ukrainian":"п'ять","example":"Máme pět minut.","tags":["numbers","basic"],"difficulty":1},
-  {"id":"w026","czech":"láhev","gender":"f","type":"noun","transcription":"laahef","ukrainian":"пляшка","example":"Kupte láhev vody.","tags":["food","basic"],"difficulty":1},
-  {"id":"w027","czech":"záloha za láhev","gender":"f","type":"phrase","transcription":"zaaloha za laahef","ukrainian":"застава за пляшку","example":"Záloha za láhev je tři koruny.","tags":["phrases","food"],"difficulty":2},
-  {"id":"w028","czech":"příroda","gender":"f","type":"noun","transcription":"przheeroda","ukrainian":"природа","example":"Česká příroda je krásná.","tags":["nature"],"difficulty":2},
-  {"id":"w029","czech":"lístek na vlak","gender":"m","type":"phrase","transcription":"leestek na vlak","ukrainian":"квиток на поїзд","example":"Potřebuji lístek na vlak do Brna.","tags":["travel"],"difficulty":2},
-  {"id":"w030","czech":"lístek do kina","gender":"m","type":"phrase","transcription":"leestek do kina","ukrainian":"квиток до кінотеатру","example":"Koupil jsem dva lístky do kina.","tags":["travel"],"difficulty":2},
-  {"id":"w031","czech":"iluze","gender":"f","type":"noun","transcription":"iluze","ukrainian":"ілюзія","example":"To je jen iluze.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w032","czech":"rychle","gender":null,"type":"adverb","transcription":"rikhle","ukrainian":"швидко","example":"Mluví velmi rychle.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w033","czech":"jezdím rychle","gender":null,"type":"phrase","transcription":"yezdeem rikhle","ukrainian":"я їжджу швидко","example":"Jezdím rychle, ale opatrně.","tags":["phrases"],"difficulty":2},
-  {"id":"w034","czech":"město","gender":"n","type":"noun","transcription":"myesto","ukrainian":"місто","example":"Praha je krásné město.","tags":["places","basic"],"difficulty":1},
-  {"id":"w035","czech":"místo","gender":"n","type":"noun","transcription":"meesto","ukrainian":"місце","example":"Je tady volné místo?","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w036","czech":"nemocný","gender":null,"type":"adjective","transcription":"nemotsnee","ukrainian":"хворий","example":"Jsem nemocný, nemohu jít do práce.","tags":["health"],"difficulty":2},
-  {"id":"w037","czech":"nemoc","gender":"f","type":"noun","transcription":"nemots","ukrainian":"хвороба","example":"To je vážná nemoc.","tags":["health"],"difficulty":2},
-  {"id":"w038","czech":"moci","gender":null,"type":"verb","transcription":"motsi","ukrainian":"могти","example":"Mohu vám pomoci?","tags":["verbs"],"difficulty":2},
-  {"id":"w039","czech":"onemocnět","gender":null,"type":"verb","transcription":"onemotsnyet","ukrainian":"захворіти","example":"Nechci onemocnět v zimě.","tags":["verbs","health"],"difficulty":2},
-  {"id":"w040","czech":"ještě","gender":null,"type":"adverb","transcription":"yeshtye","ukrainian":"ще","example":"Chcete ještě něco?","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w041","czech":"pizza","gender":"f","type":"noun","transcription":"pitsa","ukrainian":"піца","example":"Dáme si pizzu na večeři.","tags":["food"],"difficulty":1},
-  {"id":"w042","czech":"šálek čaje","gender":"m","type":"phrase","transcription":"shaalek chaye","ukrainian":"чашка чаю","example":"Dáte si šálek čaje?","tags":["food"],"difficulty":1},
-  {"id":"w043","czech":"tužka","gender":"f","type":"noun","transcription":"tuzhka","ukrainian":"олівець","example":"Můžete mi půjčit tužku?","tags":["vocabulary"],"difficulty":1},
-  {"id":"w044","czech":"omlouvám se","gender":null,"type":"phrase","transcription":"omlouvaam se","ukrainian":"вибачте","example":"Omlouvám se za zpoždění.","tags":["greetings","phrases"],"difficulty":1},
-  {"id":"w045","czech":"promiňte","gender":null,"type":"phrase","transcription":"prominyte","ukrainian":"пробачте","example":"Promiňte, kde je metro?","tags":["greetings","phrases"],"difficulty":1},
-  {"id":"w046","czech":"buďte tak hodný","gender":null,"type":"phrase","transcription":"budyte tak hodnee","ukrainian":"будьте так люб'язні","example":"Buďte tak hodný a podejte mi to.","tags":["phrases"],"difficulty":2},
-  {"id":"w047","czech":"nemohl byste","gender":null,"type":"phrase","transcription":"nemohl biste","ukrainian":"ви не могли б","example":"Nemohl byste mi pomoci?","tags":["phrases"],"difficulty":2},
-  {"id":"w048","czech":"pardon","gender":null,"type":"interjection","transcription":"pardon","ukrainian":"перепрошую","example":"Pardon, to jsem nechtěl.","tags":["greetings","phrases"],"difficulty":1},
-  {"id":"w049","czech":"dovolíte","gender":null,"type":"verb","transcription":"dovoleetye","ukrainian":"ви дозволите?","example":"Dovolíte, abych si sedl?","tags":["phrases"],"difficulty":2},
-  {"id":"w050","czech":"čichat","gender":null,"type":"verb","transcription":"chichat","ukrainian":"нюхати","example":"Pes rád čichá květiny.","tags":["verbs"],"difficulty":2},
-  {"id":"w051","czech":"starost","gender":"f","type":"noun","transcription":"starost","ukrainian":"турбота","example":"Mám velkou starost o rodinu.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w052","czech":"kůrka","gender":"f","type":"noun","transcription":"kuurka","ukrainian":"скоринка (хліба)","example":"Sněz i tu kůrku chleba.","tags":["food"],"difficulty":2},
-  {"id":"w053","czech":"povaha","gender":"f","type":"noun","transcription":"povaha","ukrainian":"характер","example":"Má klidnou povahu.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w054","czech":"zatím","gender":null,"type":"adverb","transcription":"zateem","ukrainian":"поки що, досі","example":"Zatím je všechno v pořádku.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w055","czech":"mládenec","gender":"m","type":"noun","transcription":"mlaadenets","ukrainian":"парубок","example":"Ten mládenec je velmi šikovný.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w056","czech":"humr","gender":"m","type":"noun","transcription":"humr","ukrainian":"омар","example":"Objednal si humra na večeři.","tags":["food","animals"],"difficulty":2},
-  {"id":"w057","czech":"ret","gender":"m","type":"noun","transcription":"ret","ukrainian":"губа","example":"Má krásné rty.","tags":["body"],"difficulty":2},
-  {"id":"w058","czech":"inspirace","gender":"f","type":"noun","transcription":"inspiraatse","ukrainian":"натхнення","example":"Hledám inspiraci pro svou práci.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w059","czech":"žínka","gender":"f","type":"noun","transcription":"zheenka","ukrainian":"мочалка","example":"Podej mi žínku, prosím.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w060","czech":"školník","gender":"m","type":"noun","transcription":"shkolneek","ukrainian":"шкільний сторож","example":"Školník otevřel bránu.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w061","czech":"vážný","gender":null,"type":"adjective","transcription":"vaazhnee","ukrainian":"серйозний","example":"To je vážný problém.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w062","czech":"vůně","gender":"f","type":"noun","transcription":"vuunye","ukrainian":"запах","example":"Cítím vůni kávy.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w063","czech":"varovat","gender":null,"type":"verb","transcription":"varovat","ukrainian":"попереджувати","example":"Musím vás varovat před nebezpečím.","tags":["verbs"],"difficulty":2},
-  {"id":"w064","czech":"had","gender":"m","type":"noun","transcription":"had","ukrainian":"змія","example":"V trávě je had!","tags":["animals"],"difficulty":2},
-  {"id":"w065","czech":"chalupa","gender":"f","type":"noun","transcription":"khalupa","ukrainian":"хатина","example":"Máme chalupu na venkově.","tags":["places"],"difficulty":2},
-  {"id":"w066","czech":"pitomec","gender":"m","type":"noun","transcription":"pitomets","ukrainian":"дурень, ідіот","example":"Nebuď pitomec!","tags":["vocabulary"],"difficulty":2},
-  {"id":"w067","czech":"život","gender":"m","type":"noun","transcription":"zhivot","ukrainian":"життя","example":"Život je krásný.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w068","czech":"strana","gender":"f","type":"noun","transcription":"strana","ukrainian":"сторона","example":"Na druhé straně ulice je obchod.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w069","czech":"vlast","gender":"f","type":"noun","transcription":"vlast","ukrainian":"батьківщина","example":"Miluju svou vlast.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w070","czech":"klas","gender":"m","type":"noun","transcription":"klas","ukrainian":"колос","example":"Na poli rostou klasy pšenice.","tags":["nature"],"difficulty":3},
-  {"id":"w071","czech":"zákaz","gender":"m","type":"noun","transcription":"zaakaz","ukrainian":"заборона","example":"Tady je zákaz kouření.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w072","czech":"krásný","gender":null,"type":"adjective","transcription":"kraasnee","ukrainian":"гарний","example":"To je krásný den.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w073","czech":"kalhoty","gender":"f","type":"noun","transcription":"kalhoti","ukrainian":"штани","example":"Koupil jsem si nové kalhoty.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w074","czech":"kalhotky","gender":"f","type":"noun","transcription":"kalhotki","ukrainian":"трусики","example":"Kalhotky jsou v šuplíku.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w075","czech":"občerstvení","gender":"n","type":"noun","transcription":"obcherstvenee","ukrainian":"закуска","example":"Na konferenci bylo občerstvení.","tags":["food"],"difficulty":2},
-  {"id":"w076","czech":"pohoda","gender":"f","type":"noun","transcription":"pohoda","ukrainian":"спокій","example":"Dnes je pohoda, nikam nespěchám.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w077","czech":"vláda","gender":"f","type":"noun","transcription":"vlaada","ukrainian":"уряд","example":"Vláda schválila nový zákon.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w078","czech":"nevidomý","gender":null,"type":"adjective","transcription":"nevidomee","ukrainian":"сліпий","example":"Nevidomý muž přecházel ulici.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w079","czech":"podvodník","gender":"m","type":"noun","transcription":"podvodneek","ukrainian":"шахрай","example":"Pozor na toho podvodníka!","tags":["vocabulary"],"difficulty":2},
-  {"id":"w080","czech":"pokoj","gender":"m","type":"noun","transcription":"pokoy","ukrainian":"кімната","example":"Můj pokoj je na druhém patře.","tags":["places","basic"],"difficulty":1},
-  {"id":"w081","czech":"písnička","gender":"f","type":"noun","transcription":"peesnichka","ukrainian":"пісенька","example":"Zpívá krásnou písničku.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w082","czech":"rakovina","gender":"f","type":"noun","transcription":"rakovina","ukrainian":"рак","example":"Léčba rakoviny se zlepšuje.","tags":["health"],"difficulty":3},
-  {"id":"w083","czech":"řešení","gender":"n","type":"noun","transcription":"rzeshenee","ukrainian":"рішення","example":"Musíme najít řešení.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w084","czech":"sleva","gender":"f","type":"noun","transcription":"sleva","ukrainian":"знижка","example":"V obchodě je velká sleva.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w085","czech":"obloha","gender":"f","type":"noun","transcription":"obloha","ukrainian":"небо","example":"Obloha je dnes modrá.","tags":["nature"],"difficulty":1},
-  {"id":"w086","czech":"spokojený","gender":null,"type":"adjective","transcription":"spokoyenee","ukrainian":"задоволений","example":"Jsem spokojený se svou prací.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w087","czech":"stůl","gender":"m","type":"noun","transcription":"stuul","ukrainian":"стіл","example":"Kniha leží na stole.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w088","czech":"úžasný","gender":null,"type":"adjective","transcription":"oozhasnee","ukrainian":"чудовий","example":"To je úžasný nápad!","tags":["vocabulary"],"difficulty":2},
-  {"id":"w089","czech":"úkol","gender":"m","type":"noun","transcription":"ookol","ukrainian":"завдання","example":"Musím dokončit úkol.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w090","czech":"čerstvý","gender":null,"type":"adjective","transcription":"cherstvee","ukrainian":"свіжий","example":"Chci čerstvý chleba.","tags":["food","vocabulary"],"difficulty":2},
-  {"id":"w091","czech":"činit","gender":null,"type":"verb","transcription":"chinit","ukrainian":"робити","example":"Co mám činit?","tags":["verbs"],"difficulty":2},
-  {"id":"w092","czech":"šikovný","gender":null,"type":"adjective","transcription":"shikovnee","ukrainian":"спритний","example":"Je to šikovný člověk.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w093","czech":"miláček","gender":"m","type":"noun","transcription":"milaachek","ukrainian":"улюбленець","example":"Ty jsi můj miláček.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w094","czech":"trdlo","gender":"n","type":"noun","transcription":"trdlo","ukrainian":"телепень","example":"Nebuď trdlo!","tags":["vocabulary"],"difficulty":2},
-  {"id":"w095","czech":"blázen","gender":"m","type":"noun","transcription":"blaazen","ukrainian":"божевільний","example":"Jsi úplný blázen!","tags":["vocabulary"],"difficulty":2},
-  {"id":"w096","czech":"stávka","gender":"f","type":"noun","transcription":"staavka","ukrainian":"страйк","example":"Učitelé vyhlásili stávku.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w097","czech":"otrok","gender":"m","type":"noun","transcription":"otrok","ukrainian":"раб","example":"Nejsem tvůj otrok!","tags":["vocabulary"],"difficulty":2},
-  {"id":"w098","czech":"podobat se","gender":null,"type":"verb","transcription":"podobat se","ukrainian":"бути схожим","example":"Podobáš se svému otci.","tags":["verbs"],"difficulty":2},
-  {"id":"w099","czech":"družina","gender":"f","type":"noun","transcription":"druzhina","ukrainian":"гурток","example":"Děti chodí do družiny po škole.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w100","czech":"lis","gender":"m","type":"noun","transcription":"lis","ukrainian":"прес","example":"Ve vinici je starý lis.","tags":["vocabulary"],"difficulty":3},
-  {"id":"w101","czech":"ručičky","gender":"f","type":"noun","transcription":"ruchichki","ukrainian":"стрілки (годинника)","example":"Ručičky hodin ukazují poledne.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w102","czech":"nezaměstnaný","gender":null,"type":"adjective","transcription":"nezamyestnanee","ukrainian":"безробітний","example":"Je nezaměstnaný už půl roku.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w103","czech":"unavený","gender":null,"type":"adjective","transcription":"unavenee","ukrainian":"втомлений","example":"Jsem velmi unavený po práci.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w104","czech":"překvapený","gender":null,"type":"adjective","transcription":"przhekvapenee","ukrainian":"здивований","example":"Byl jsem překvapený tím dárkem.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w105","czech":"jsem v práci","gender":null,"type":"phrase","transcription":"sem f praatsi","ukrainian":"я на роботі (зараз)","example":"Teď jsem v práci, zavolám později.","tags":["phrases","basic"],"difficulty":1},
-  {"id":"w106","czech":"kdo","gender":null,"type":"pronoun","transcription":"gdo","ukrainian":"хто","example":"Kdo to je?","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w107","czech":"pozdravuj doma","gender":null,"type":"phrase","transcription":"pozdravuy doma","ukrainian":"передавай привіт рідним","example":"Nashledanou a pozdravuj doma!","tags":["greetings","phrases"],"difficulty":2},
-  {"id":"w108","czech":"IT'ák","gender":"m","type":"noun","transcription":"aytaak","ukrainian":"айтівець","example":"Můj bratr je IT'ák.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w109","czech":"taky","gender":null,"type":"adverb","transcription":"taki","ukrainian":"також","example":"Já chci taky zmrzlinu!","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w110","czech":"mějte se hezky","gender":null,"type":"phrase","transcription":"myeyte se heski","ukrainian":"всього найкращого","example":"Mějte se hezky, nashledanou!","tags":["greetings"],"difficulty":1},
-  {"id":"w111","czech":"jak se jmenujete?","gender":null,"type":"phrase","transcription":"yak se ymenuyete","ukrainian":"як вас звати?","example":"Dobrý den, jak se jmenujete?","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w112","czech":"prodavač","gender":"m","type":"noun","transcription":"prodavach","ukrainian":"продавець","example":"Prodavač mi poradil dobré víno.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w113","czech":"Rakousko","gender":"n","type":"noun","transcription":"rakousko","ukrainian":"Австрія","example":"Rakousko sousedí s Českem.","tags":["places"],"difficulty":2},
-  {"id":"w114","czech":"manažer","gender":"m","type":"noun","transcription":"manazher","ukrainian":"менеджер","example":"Manažer vede tým deseti lidí.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w115","czech":"těší mě","gender":null,"type":"phrase","transcription":"tyeshee mnye","ukrainian":"радий знайомству","example":"Těší mě, já jsem Pavel.","tags":["greetings","basic"],"difficulty":1},
-  {"id":"w116","czech":"měj se hezky","gender":null,"type":"phrase","transcription":"myey se heski","ukrainian":"гарного дня","example":"Měj se hezky, ahoj!","tags":["greetings"],"difficulty":1},
-  {"id":"w117","czech":"znáte","gender":null,"type":"verb","transcription":"znaate","ukrainian":"ви знаєте","example":"Znáte tuto restauraci?","tags":["verbs"],"difficulty":2},
-  {"id":"w118","czech":"český","gender":null,"type":"adjective","transcription":"cheskee","ukrainian":"чеський","example":"Český jazyk je krásný.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w119","czech":"pozdravy","gender":"m","type":"noun","transcription":"pozdravi","ukrainian":"привітання","example":"Pošli mu srdečné pozdravy.","tags":["greetings"],"difficulty":2},
-  {"id":"w120","czech":"čtěte","gender":null,"type":"verb","transcription":"chtyete","ukrainian":"читайте","example":"Čtěte prosím nahlas.","tags":["verbs"],"difficulty":2},
-  {"id":"w121","czech":"pečlivě","gender":null,"type":"adverb","transcription":"pechlivye","ukrainian":"ретельно, уважно","example":"Čtěte pečlivě instrukce.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w122","czech":"vyslovujte","gender":null,"type":"verb","transcription":"vislovuyte","ukrainian":"вимовляйте","example":"Vyslovujte správně každé slovo.","tags":["verbs"],"difficulty":2},
-  {"id":"w123","czech":"délka","gender":"f","type":"noun","transcription":"deelka","ukrainian":"довжина","example":"Délka samohlásek je důležitá.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w124","czech":"Irsko","gender":"n","type":"noun","transcription":"irsko","ukrainian":"Ірландія","example":"Irsko je zelený ostrov.","tags":["places"],"difficulty":2},
-  {"id":"w125","czech":"učitel","gender":"m","type":"noun","transcription":"uchitel","ukrainian":"вчитель","example":"Učitel vysvětluje gramatiku.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w126","czech":"Maďarsko","gender":"n","type":"noun","transcription":"madyarsko","ukrainian":"Угорщина","example":"Maďarsko je jižní soused Slovenska.","tags":["places"],"difficulty":2},
-  {"id":"w127","czech":"řidič","gender":"m","type":"noun","transcription":"rzhidich","ukrainian":"водій","example":"Řidič autobusu zastavil.","tags":["vocabulary"],"difficulty":2},
-  {"id":"w128","czech":"špatně","gender":null,"type":"adverb","transcription":"shpatnye","ukrainian":"погано","example":"Cítím se špatně.","tags":["vocabulary","basic"],"difficulty":1},
-  {"id":"w129","czech":"vily","gender":"f","type":"noun","transcription":"vili","ukrainian":"вілли (коротке i)","example":"Na kopci stojí krásné vily.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w130","czech":"víly","gender":"f","type":"noun","transcription":"veeeli","ukrainian":"феї (довге í)","example":"Víly tančily v lese.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w131","czech":"dám","gender":null,"type":"verb","transcription":"daam","ukrainian":"я дам (довге á)","example":"Dám ti to zítra.","tags":["pronunciation","verbs"],"difficulty":2},
-  {"id":"w132","czech":"dam","gender":"f","type":"noun","transcription":"dam","ukrainian":"дамба (коротке a)","example":"U řeky je stará dam.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w133","czech":"mile","gender":null,"type":"adverb","transcription":"mile","ukrainian":"мило / приємно (коротке e)","example":"Bylo to mile překvapení.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w134","czech":"milé","gender":null,"type":"adjective","transcription":"milee","ukrainian":"милі / дорогі (довге é)","example":"Milé dámy a pánové.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w135","czech":"kůl","gender":"m","type":"noun","transcription":"kuul","ukrainian":"стовп (довге ů)","example":"Zatloukl kůl do země.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w136","czech":"kul","gender":null,"type":"verb","transcription":"kul","ukrainian":"котив (коротке u)","example":"Kul kouli po podlaze.","tags":["pronunciation"],"difficulty":3},
-  {"id":"w137","czech":"mlaty","gender":"m","type":"noun","transcription":"mlati","ukrainian":"токи (коротке y)","example":"Staré mlaty jsou na farmě.","tags":["pronunciation"],"difficulty":3},
-  {"id":"w138","czech":"mladý","gender":null,"type":"adjective","transcription":"mladee","ukrainian":"молодий (довге ý)","example":"Je to mladý muž.","tags":["pronunciation","basic"],"difficulty":1},
-  {"id":"w139","czech":"móda","gender":"f","type":"noun","transcription":"mooda","ukrainian":"мода (довге ó)","example":"Sleduje nejnovější módu.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w140","czech":"mražení","gender":"n","type":"noun","transcription":"mrazhenee","ukrainian":"заморожування (ž = ж)","example":"Mražení potravin je praktické.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w141","czech":"mrazení","gender":"n","type":"noun","transcription":"mrazenee","ukrainian":"морозіння (z = з)","example":"Cítím mrazení v zádech.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w142","czech":"hodit","gender":null,"type":"verb","transcription":"hodit","ukrainian":"кинути (h = г)","example":"Hoď mi ten míč!","tags":["pronunciation","verbs"],"difficulty":2},
-  {"id":"w143","czech":"chodit","gender":null,"type":"verb","transcription":"khodit","ukrainian":"ходити (ch = х)","example":"Chodím do práce pěšky.","tags":["pronunciation","verbs"],"difficulty":2},
-  {"id":"w144","czech":"ďas","gender":"m","type":"noun","transcription":"dyas","ukrainian":"диявол (ď = дь)","example":"Ďas ho pokoušel.","tags":["pronunciation"],"difficulty":3},
-  {"id":"w145","czech":"dar","gender":"m","type":"noun","transcription":"dar","ukrainian":"подарунок (тверде d)","example":"Dostal krásný dar.","tags":["pronunciation","basic"],"difficulty":1},
-  {"id":"w146","czech":"tuk","gender":"m","type":"noun","transcription":"tuk","ukrainian":"жир (тверде t)","example":"Maso má hodně tuku.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w147","czech":"ťuk","gender":"m","type":"noun","transcription":"tyuk","ukrainian":"стук (ť = ть)","example":"Slyšel jsem ťukání na dveře.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w148","czech":"hodný","gender":null,"type":"adjective","transcription":"hodnee","ukrainian":"добрий (довге ý)","example":"Je to hodný člověk.","tags":["pronunciation","basic"],"difficulty":1},
-  {"id":"w149","czech":"hodní","gender":null,"type":"adjective","transcription":"hodnee","ukrainian":"добрі (довге í)","example":"Buďte hodní, děti!","tags":["pronunciation"],"difficulty":2},
-  {"id":"w150","czech":"díky","gender":null,"type":"interjection","transcription":"djeeki","ukrainian":"завдяки / спасибі (довге í)","example":"Díky za pomoc!","tags":["pronunciation","greetings"],"difficulty":1},
-  {"id":"w151","czech":"dýky","gender":"f","type":"noun","transcription":"deeki","ukrainian":"кинджали (довге ý)","example":"Na stěně visely staré dýky.","tags":["pronunciation"],"difficulty":3},
-  {"id":"w152","czech":"stěn","gender":"f","type":"noun","transcription":"styen","ukrainian":"стін (ě = є)","example":"Barva stěn je bílá.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w153","czech":"děkuju","gender":null,"type":"verb","transcription":"dyekuyu","ukrainian":"дякую (dě = дє)","example":"Děkuju, jsi hodný.","tags":["pronunciation","greetings"],"difficulty":1},
-  {"id":"w154","czech":"deka","gender":"f","type":"noun","transcription":"deka","ukrainian":"ковдра (тверде de)","example":"Přikryj se dekou.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w155","czech":"koš","gender":"m","type":"noun","transcription":"kosh","ukrainian":"кошик (š = ш)","example":"Hoď to do koše.","tags":["pronunciation"],"difficulty":2},
-  {"id":"w156","czech":"kos","gender":"m","type":"noun","transcription":"kos","ukrainian":"дрізд (s = с)","example":"Kos zpívá v zahradě.","tags":["pronunciation","animals"],"difficulty":2},
-  {"id":"w157","czech":"čočka","gender":"f","type":"noun","transcription":"chochka","ukrainian":"сочевиця / лінза","example":"Na oběd bude čočková polévka.","tags":["food"],"difficulty":2},
-  {"id":"w158","czech":"paní","gender":"f","type":"noun","transcription":"panee","ukrainian":"пані (довге í)","example":"Dobrý den, paní Nováková.","tags":["pronunciation","greetings"],"difficulty":1},
-  {"id":"w159","czech":"páni","gender":"m","type":"noun","transcription":"paani","ukrainian":"панове (довге á)","example":"Vážení páni, vítejte!","tags":["pronunciation"],"difficulty":2}
+[
+  {
+    "id": "w001",
+    "czech": "dobrý den",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "dobrii den",
+    "transcriptionCyr": "добріі ден",
+    "ukrainian": "добрий день",
+    "example": "Dobrý den, jak se máte?",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w002",
+    "czech": "ahoj",
+    "gender": null,
+    "type": "interjection",
+    "transcription": "ahoy",
+    "transcriptionCyr": "агой",
+    "ukrainian": "привіт",
+    "example": "Ahoj, jak se máš?",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w003",
+    "czech": "děkuji",
+    "gender": null,
+    "type": "verb",
+    "transcription": "dyekuyi",
+    "transcriptionCyr": "дєкуйі",
+    "ukrainian": "дякую",
+    "example": "Děkuji za pomoc.",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w004",
+    "czech": "prosím",
+    "gender": null,
+    "type": "particle",
+    "transcription": "prosiim",
+    "transcriptionCyr": "просіім",
+    "ukrainian": "будь ласка",
+    "example": "Prosím, podejte mi sůl.",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w005",
+    "czech": "na shledanou",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "na skhledanou",
+    "transcriptionCyr": "на схледаноу",
+    "ukrainian": "до побачення",
+    "example": "Na shledanou, bylo to hezké.",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w006",
+    "czech": "chleba",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "khleba",
+    "transcriptionCyr": "хлеба",
+    "ukrainian": "хліб",
+    "example": "Koupil jsem čerstvý chleba.",
+    "tags": [
+      "food",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w007",
+    "czech": "mléko",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "mleeko",
+    "transcriptionCyr": "млееко",
+    "ukrainian": "молоко",
+    "example": "Dáte si mléko do kávy?",
+    "tags": [
+      "food",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w008",
+    "czech": "voda",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "voda",
+    "transcriptionCyr": "вода",
+    "ukrainian": "вода",
+    "example": "Chci sklenici vody.",
+    "tags": [
+      "food",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w009",
+    "czech": "káva",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "kaava",
+    "transcriptionCyr": "каава",
+    "ukrainian": "кава",
+    "example": "Dám si kávu s mlékem.",
+    "tags": [
+      "food",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w010",
+    "czech": "pivo",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "pivo",
+    "transcriptionCyr": "піво",
+    "ukrainian": "пиво",
+    "example": "České pivo je výborné.",
+    "tags": [
+      "food",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w011",
+    "czech": "kočka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "kochka",
+    "transcriptionCyr": "кочка",
+    "ukrainian": "кішка",
+    "example": "Kočka spí na gauči.",
+    "tags": [
+      "animals",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w012",
+    "czech": "pes",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "pes",
+    "transcriptionCyr": "пес",
+    "ukrainian": "пес / собака",
+    "example": "Pes běží v parku.",
+    "tags": [
+      "animals",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w013",
+    "czech": "pták",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "ptaak",
+    "transcriptionCyr": "птаак",
+    "ukrainian": "птах",
+    "example": "Pták zpívá na stromě.",
+    "tags": [
+      "animals",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w014",
+    "czech": "jedna",
+    "gender": "f",
+    "type": "numeral",
+    "transcription": "yedna",
+    "transcriptionCyr": "йедна",
+    "ukrainian": "один / одна",
+    "example": "Mám jednu sestru.",
+    "tags": [
+      "numbers",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w015",
+    "czech": "dva",
+    "gender": null,
+    "type": "numeral",
+    "transcription": "dva",
+    "transcriptionCyr": "два",
+    "ukrainian": "два",
+    "example": "Mám dva bratry.",
+    "tags": [
+      "numbers",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w016",
+    "czech": "tři",
+    "gender": null,
+    "type": "numeral",
+    "transcription": "trzhi",
+    "transcriptionCyr": "тржі",
+    "ukrainian": "три",
+    "example": "Jsou tři hodiny.",
+    "tags": [
+      "numbers",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w017",
+    "czech": "mluvit",
+    "gender": null,
+    "type": "verb",
+    "transcription": "mluvit",
+    "transcriptionCyr": "млувіт",
+    "ukrainian": "говорити",
+    "example": "Umíte mluvit česky?",
+    "tags": [
+      "verbs",
+      "basic"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w018",
+    "czech": "jíst",
+    "gender": null,
+    "type": "verb",
+    "transcription": "yiist",
+    "transcriptionCyr": "йііст",
+    "ukrainian": "їсти",
+    "example": "Chci jíst oběd.",
+    "tags": [
+      "verbs",
+      "basic"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w019",
+    "czech": "pít",
+    "gender": null,
+    "type": "verb",
+    "transcription": "piit",
+    "transcriptionCyr": "пііт",
+    "ukrainian": "пити",
+    "example": "Musíte pít hodně vody.",
+    "tags": [
+      "verbs",
+      "basic"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w020",
+    "czech": "rozumět",
+    "gender": null,
+    "type": "verb",
+    "transcription": "rozumnyet",
+    "transcriptionCyr": "розумнєт",
+    "ukrainian": "розуміти",
+    "example": "Rozumíte česky?",
+    "tags": [
+      "verbs",
+      "basic"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w021",
+    "czech": "opakujte prosím",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "opakuyte prosiim",
+    "transcriptionCyr": "опакуйте просіім",
+    "ukrainian": "повторіть, будь ласка",
+    "example": "Opakujte prosím, nerozuměl jsem.",
+    "tags": [
+      "phrases",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w022",
+    "czech": "Národní třída",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "naarodnii trzhiida",
+    "transcriptionCyr": "наародніі тржііда",
+    "ukrainian": "Національний проспект",
+    "example": "Sejdeme se na Národní třídě.",
+    "tags": [
+      "places"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w023",
+    "czech": "Česká národní banka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "cheskaa naarodnii banka",
+    "transcriptionCyr": "ческаа наародніі банка",
+    "ukrainian": "Чеський національний банк",
+    "example": "Česká národní banka je v Praze.",
+    "tags": [
+      "places"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w024",
+    "czech": "zkuste to přeložit",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "zkuste to przhelozhit",
+    "transcriptionCyr": "зкусте то пржеложіт",
+    "ukrainian": "спробуйте це перекласти",
+    "example": "Zkuste to přeložit do češtiny.",
+    "tags": [
+      "phrases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w025",
+    "czech": "pět",
+    "gender": null,
+    "type": "numeral",
+    "transcription": "pyet",
+    "transcriptionCyr": "пйет",
+    "ukrainian": "п'ять",
+    "example": "Máme pět minut.",
+    "tags": [
+      "numbers",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w026",
+    "czech": "láhev",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "laahef",
+    "transcriptionCyr": "лаагеф",
+    "ukrainian": "пляшка",
+    "example": "Kupte láhev vody.",
+    "tags": [
+      "food",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w027",
+    "czech": "záloha za láhev",
+    "gender": "f",
+    "type": "phrase",
+    "transcription": "zaaloha za laahef",
+    "transcriptionCyr": "заалога за лаагеф",
+    "ukrainian": "застава за пляшку",
+    "example": "Záloha za láhev je tři koruny.",
+    "tags": [
+      "phrases",
+      "food"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w028",
+    "czech": "příroda",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "przhiiroda",
+    "transcriptionCyr": "пржіірода",
+    "ukrainian": "природа",
+    "example": "Česká příroda je krásná.",
+    "tags": [
+      "nature"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w029",
+    "czech": "lístek na vlak",
+    "gender": "mi",
+    "type": "phrase",
+    "transcription": "liistek na vlak",
+    "transcriptionCyr": "ліістек на влак",
+    "ukrainian": "квиток на поїзд",
+    "example": "Potřebuji lístek na vlak do Brna.",
+    "tags": [
+      "travel"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w030",
+    "czech": "lístek do kina",
+    "gender": "mi",
+    "type": "phrase",
+    "transcription": "liistek do kina",
+    "transcriptionCyr": "ліістек до кіна",
+    "ukrainian": "квиток до кінотеатру",
+    "example": "Koupil jsem dva lístky do kina.",
+    "tags": [
+      "travel"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w031",
+    "czech": "iluze",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "iluze",
+    "transcriptionCyr": "ілузе",
+    "ukrainian": "ілюзія",
+    "example": "To je jen iluze.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w032",
+    "czech": "rychle",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "rikhle",
+    "transcriptionCyr": "ріхле",
+    "ukrainian": "швидко",
+    "example": "Mluví velmi rychle.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w033",
+    "czech": "jezdím rychle",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "yezdiim rikhle",
+    "transcriptionCyr": "йездіім ріхле",
+    "ukrainian": "я їжджу швидко",
+    "example": "Jezdím rychle, ale opatrně.",
+    "tags": [
+      "phrases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w034",
+    "czech": "město",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "mnyesto",
+    "transcriptionCyr": "мнєсто",
+    "ukrainian": "місто",
+    "example": "Praha je krásné město.",
+    "tags": [
+      "places",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w035",
+    "czech": "místo",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "miisto",
+    "transcriptionCyr": "міісто",
+    "ukrainian": "місце",
+    "example": "Je tady volné místo?",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w036",
+    "czech": "nemocný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "nemotsnii",
+    "transcriptionCyr": "немоцніі",
+    "ukrainian": "хворий",
+    "example": "Jsem nemocný, nemohu jít do práce.",
+    "tags": [
+      "health"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w037",
+    "czech": "nemoc",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "nemots",
+    "transcriptionCyr": "немоц",
+    "ukrainian": "хвороба",
+    "example": "To je vážná nemoc.",
+    "tags": [
+      "health"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w038",
+    "czech": "moci",
+    "gender": null,
+    "type": "verb",
+    "transcription": "motsi",
+    "transcriptionCyr": "моці",
+    "ukrainian": "могти",
+    "example": "Mohu vám pomoci?",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w039",
+    "czech": "onemocnět",
+    "gender": null,
+    "type": "verb",
+    "transcription": "onemotsnyet",
+    "transcriptionCyr": "онемоцнєт",
+    "ukrainian": "захворіти",
+    "example": "Nechci onemocnět v zimě.",
+    "tags": [
+      "verbs",
+      "health"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w040",
+    "czech": "ještě",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "yeshtye",
+    "transcriptionCyr": "йештє",
+    "ukrainian": "ще",
+    "example": "Chcete ještě něco?",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w041",
+    "czech": "pizza",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "pizza",
+    "transcriptionCyr": "пізза",
+    "ukrainian": "піца",
+    "example": "Dáme si pizzu na večeři.",
+    "tags": [
+      "food"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w042",
+    "czech": "šálek čaje",
+    "gender": "mi",
+    "type": "phrase",
+    "transcription": "shaalek chaye",
+    "transcriptionCyr": "шаалек чайе",
+    "ukrainian": "чашка чаю",
+    "example": "Dáte si šálek čaje?",
+    "tags": [
+      "food"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w043",
+    "czech": "tužka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "tuzhka",
+    "transcriptionCyr": "тужка",
+    "ukrainian": "олівець",
+    "example": "Můžete mi půjčit tužku?",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w044",
+    "czech": "omlouvám se",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "omlouvaam se",
+    "transcriptionCyr": "омлоуваам се",
+    "ukrainian": "вибачте",
+    "example": "Omlouvám se za zpoždění.",
+    "tags": [
+      "greetings",
+      "phrases"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w045",
+    "czech": "promiňte",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "prominyte",
+    "transcriptionCyr": "проміньте",
+    "ukrainian": "пробачте",
+    "example": "Promiňte, kde je metro?",
+    "tags": [
+      "greetings",
+      "phrases"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w046",
+    "czech": "buďte tak hodný",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "budyte tak hodnii",
+    "transcriptionCyr": "будьте так годніі",
+    "ukrainian": "будьте так люб'язні",
+    "example": "Buďte tak hodný a podejte mi to.",
+    "tags": [
+      "phrases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w047",
+    "czech": "nemohl byste",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "nemohl biste",
+    "transcriptionCyr": "немогл бісте",
+    "ukrainian": "ви не могли б",
+    "example": "Nemohl byste mi pomoci?",
+    "tags": [
+      "phrases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w048",
+    "czech": "pardon",
+    "gender": null,
+    "type": "interjection",
+    "transcription": "pardon",
+    "transcriptionCyr": "пардон",
+    "ukrainian": "перепрошую",
+    "example": "Pardon, to jsem nechtěl.",
+    "tags": [
+      "greetings",
+      "phrases"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w049",
+    "czech": "dovolíte",
+    "gender": null,
+    "type": "verb",
+    "transcription": "dovoliite",
+    "transcriptionCyr": "доволііте",
+    "ukrainian": "ви дозволите?",
+    "example": "Dovolíte, abych si sedl?",
+    "tags": [
+      "phrases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w050",
+    "czech": "čichat",
+    "gender": null,
+    "type": "verb",
+    "transcription": "chikhat",
+    "transcriptionCyr": "чіхат",
+    "ukrainian": "нюхати",
+    "example": "Pes rád čichá květiny.",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w051",
+    "czech": "starost",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "starost",
+    "transcriptionCyr": "старост",
+    "ukrainian": "турбота",
+    "example": "Mám velkou starost o rodinu.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w052",
+    "czech": "kůrka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "kuurka",
+    "transcriptionCyr": "куурка",
+    "ukrainian": "скоринка (хліба)",
+    "example": "Sněz i tu kůrku chleba.",
+    "tags": [
+      "food"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w053",
+    "czech": "povaha",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "povaha",
+    "transcriptionCyr": "повага",
+    "ukrainian": "характер",
+    "example": "Má klidnou povahu.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w054",
+    "czech": "zatím",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "zatiim",
+    "transcriptionCyr": "затіім",
+    "ukrainian": "поки що, досі",
+    "example": "Zatím je všechno v pořádku.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w055",
+    "czech": "mládenec",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "mlaadenets",
+    "transcriptionCyr": "млааденец",
+    "ukrainian": "парубок",
+    "example": "Ten mládenec je velmi šikovný.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w056",
+    "czech": "humr",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "humr",
+    "transcriptionCyr": "гумр",
+    "ukrainian": "омар",
+    "example": "Objednal si humra na večeři.",
+    "tags": [
+      "food",
+      "animals"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w057",
+    "czech": "ret",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "ret",
+    "transcriptionCyr": "рет",
+    "ukrainian": "губа",
+    "example": "Má krásné rty.",
+    "tags": [
+      "body"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w058",
+    "czech": "inspirace",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "inspiratse",
+    "transcriptionCyr": "інспіраце",
+    "ukrainian": "натхнення",
+    "example": "Hledám inspiraci pro svou práci.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w059",
+    "czech": "žínka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "zhiinka",
+    "transcriptionCyr": "жіінка",
+    "ukrainian": "мочалка",
+    "example": "Podej mi žínku, prosím.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w060",
+    "czech": "školník",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "shkolniik",
+    "transcriptionCyr": "школніік",
+    "ukrainian": "шкільний сторож",
+    "example": "Školník otevřel bránu.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w061",
+    "czech": "vážný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "vaazhnii",
+    "transcriptionCyr": "ваажніі",
+    "ukrainian": "серйозний",
+    "example": "To je vážný problém.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w062",
+    "czech": "vůně",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "vuunye",
+    "transcriptionCyr": "вуунє",
+    "ukrainian": "запах",
+    "example": "Cítím vůni kávy.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w063",
+    "czech": "varovat",
+    "gender": null,
+    "type": "verb",
+    "transcription": "varovat",
+    "transcriptionCyr": "вароват",
+    "ukrainian": "попереджувати",
+    "example": "Musím vás varovat před nebezpečím.",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w064",
+    "czech": "had",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "had",
+    "transcriptionCyr": "гад",
+    "ukrainian": "змія",
+    "example": "V trávě je had!",
+    "tags": [
+      "animals"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w065",
+    "czech": "chalupa",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "khalupa",
+    "transcriptionCyr": "халупа",
+    "ukrainian": "хатина",
+    "example": "Máme chalupu na venkově.",
+    "tags": [
+      "places"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w066",
+    "czech": "pitomec",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "pitomets",
+    "transcriptionCyr": "пітомец",
+    "ukrainian": "дурень, ідіот",
+    "example": "Nebuď pitomec!",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w067",
+    "czech": "život",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "zhivot",
+    "transcriptionCyr": "жівот",
+    "ukrainian": "життя",
+    "example": "Život je krásný.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w068",
+    "czech": "strana",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "strana",
+    "transcriptionCyr": "страна",
+    "ukrainian": "сторона",
+    "example": "Na druhé straně ulice je obchod.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w069",
+    "czech": "vlast",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "vlast",
+    "transcriptionCyr": "власт",
+    "ukrainian": "батьківщина",
+    "example": "Miluju svou vlast.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w070",
+    "czech": "klas",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "klas",
+    "transcriptionCyr": "клас",
+    "ukrainian": "колос",
+    "example": "Na poli rostou klasy pšenice.",
+    "tags": [
+      "nature"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w071",
+    "czech": "zákaz",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "zaakaz",
+    "transcriptionCyr": "зааказ",
+    "ukrainian": "заборона",
+    "example": "Tady je zákaz kouření.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w072",
+    "czech": "krásný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "kraasnii",
+    "transcriptionCyr": "краасніі",
+    "ukrainian": "гарний",
+    "example": "To je krásný den.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w073",
+    "czech": "kalhoty",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "kalhoti",
+    "transcriptionCyr": "калготі",
+    "ukrainian": "штани",
+    "example": "Koupil jsem si nové kalhoty.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w074",
+    "czech": "kalhotky",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "kalhotki",
+    "transcriptionCyr": "калготкі",
+    "ukrainian": "трусики",
+    "example": "Kalhotky jsou v šuplíku.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w075",
+    "czech": "občerstvení",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "obcherstvenii",
+    "transcriptionCyr": "обчерственіі",
+    "ukrainian": "закуска",
+    "example": "Na konferenci bylo občerstvení.",
+    "tags": [
+      "food"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w076",
+    "czech": "pohoda",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "pohoda",
+    "transcriptionCyr": "погода",
+    "ukrainian": "спокій",
+    "example": "Dnes je pohoda, nikam nespěchám.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w077",
+    "czech": "vláda",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "vlaada",
+    "transcriptionCyr": "влаада",
+    "ukrainian": "уряд",
+    "example": "Vláda schválila nový zákon.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w078",
+    "czech": "nevidomý",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "nevidomii",
+    "transcriptionCyr": "невідоміі",
+    "ukrainian": "сліпий",
+    "example": "Nevidomý muž přecházel ulici.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w079",
+    "czech": "podvodník",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "podvodniik",
+    "transcriptionCyr": "подводніік",
+    "ukrainian": "шахрай",
+    "example": "Pozor na toho podvodníka!",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w080",
+    "czech": "pokoj",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "pokoy",
+    "transcriptionCyr": "покой",
+    "ukrainian": "кімната",
+    "example": "Můj pokoj je na druhém patře.",
+    "tags": [
+      "places",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w081",
+    "czech": "písnička",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "piisnichka",
+    "transcriptionCyr": "пііснічка",
+    "ukrainian": "пісенька",
+    "example": "Zpívá krásnou písničku.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w082",
+    "czech": "rakovina",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "rakovina",
+    "transcriptionCyr": "раковіна",
+    "ukrainian": "рак",
+    "example": "Léčba rakoviny se zlepšuje.",
+    "tags": [
+      "health"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w083",
+    "czech": "řešení",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "rzheshenii",
+    "transcriptionCyr": "ржешеніі",
+    "ukrainian": "рішення",
+    "example": "Musíme najít řešení.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w084",
+    "czech": "sleva",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "sleva",
+    "transcriptionCyr": "слева",
+    "ukrainian": "знижка",
+    "example": "V obchodě je velká sleva.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w085",
+    "czech": "obloha",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "obloha",
+    "transcriptionCyr": "облога",
+    "ukrainian": "небо",
+    "example": "Obloha je dnes modrá.",
+    "tags": [
+      "nature"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w086",
+    "czech": "spokojený",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "spokoyenii",
+    "transcriptionCyr": "спокойеніі",
+    "ukrainian": "задоволений",
+    "example": "Jsem spokojený se svou prací.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w087",
+    "czech": "stůl",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "stuul",
+    "transcriptionCyr": "стуул",
+    "ukrainian": "стіл",
+    "example": "Kniha leží na stole.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w088",
+    "czech": "úžasný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "uuzhasnii",
+    "transcriptionCyr": "уужасніі",
+    "ukrainian": "чудовий",
+    "example": "To je úžasný nápad!",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w089",
+    "czech": "úkol",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "uukol",
+    "transcriptionCyr": "уукол",
+    "ukrainian": "завдання",
+    "example": "Musím dokončit úkol.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w090",
+    "czech": "čerstvý",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "cherstvii",
+    "transcriptionCyr": "черствіі",
+    "ukrainian": "свіжий",
+    "example": "Chci čerstvý chleba.",
+    "tags": [
+      "food",
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w091",
+    "czech": "činit",
+    "gender": null,
+    "type": "verb",
+    "transcription": "chinit",
+    "transcriptionCyr": "чініт",
+    "ukrainian": "робити",
+    "example": "Co mám činit?",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w092",
+    "czech": "šikovný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "shikovnii",
+    "transcriptionCyr": "шіковніі",
+    "ukrainian": "спритний",
+    "example": "Je to šikovný člověk.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w093",
+    "czech": "miláček",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "milaachek",
+    "transcriptionCyr": "мілаачек",
+    "ukrainian": "улюбленець",
+    "example": "Ty jsi můj miláček.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w094",
+    "czech": "trdlo",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "trdlo",
+    "transcriptionCyr": "трдло",
+    "ukrainian": "телепень",
+    "example": "Nebuď trdlo!",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w095",
+    "czech": "blázen",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "blaazen",
+    "transcriptionCyr": "блаазен",
+    "ukrainian": "божевільний",
+    "example": "Jsi úplný blázen!",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w096",
+    "czech": "stávka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "staavka",
+    "transcriptionCyr": "стаавка",
+    "ukrainian": "страйк",
+    "example": "Učitelé vyhlásili stávku.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w097",
+    "czech": "otrok",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "otrok",
+    "transcriptionCyr": "отрок",
+    "ukrainian": "раб",
+    "example": "Nejsem tvůj otrok!",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w098",
+    "czech": "podobat se",
+    "gender": null,
+    "type": "verb",
+    "transcription": "podobat se",
+    "transcriptionCyr": "подобат се",
+    "ukrainian": "бути схожим",
+    "example": "Podobáš se svému otci.",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w099",
+    "czech": "družina",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "druzhina",
+    "transcriptionCyr": "дружіна",
+    "ukrainian": "гурток",
+    "example": "Děti chodí do družiny po škole.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w100",
+    "czech": "lis",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "lis",
+    "transcriptionCyr": "ліс",
+    "ukrainian": "прес",
+    "example": "Ve vinici je starý lis.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w101",
+    "czech": "ručičky",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "ruchichki",
+    "transcriptionCyr": "ручічкі",
+    "ukrainian": "стрілки (годинника)",
+    "example": "Ručičky hodin ukazují poledne.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w102",
+    "czech": "nezaměstnaný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "nezamnyestnanii",
+    "transcriptionCyr": "незамнєстнаніі",
+    "ukrainian": "безробітний",
+    "example": "Je nezaměstnaný už půl roku.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w103",
+    "czech": "unavený",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "unavenii",
+    "transcriptionCyr": "унавеніі",
+    "ukrainian": "втомлений",
+    "example": "Jsem velmi unavený po práci.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w104",
+    "czech": "překvapený",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "przhekvapenii",
+    "transcriptionCyr": "пржеквапеніі",
+    "ukrainian": "здивований",
+    "example": "Byl jsem překvapený tím dárkem.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w105",
+    "czech": "jsem v práci",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "sem f praatsi",
+    "transcriptionCyr": "сем ф прааці",
+    "ukrainian": "я на роботі (зараз)",
+    "example": "Teď jsem v práci, zavolám později.",
+    "tags": [
+      "phrases",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w106",
+    "czech": "kdo",
+    "gender": null,
+    "type": "pronoun",
+    "transcription": "gdo",
+    "transcriptionCyr": "ґдо",
+    "ukrainian": "хто",
+    "example": "Kdo to je?",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w107",
+    "czech": "pozdravuj doma",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "pozdravuy doma",
+    "transcriptionCyr": "поздравуй дома",
+    "ukrainian": "передавай привіт рідним",
+    "example": "Nashledanou a pozdravuj doma!",
+    "tags": [
+      "greetings",
+      "phrases"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w108",
+    "czech": "IT'ák",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "aytaak",
+    "transcriptionCyr": "айтаак",
+    "ukrainian": "айтівець",
+    "example": "Můj bratr je IT'ák.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w109",
+    "czech": "taky",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "taki",
+    "transcriptionCyr": "такі",
+    "ukrainian": "також",
+    "example": "Já chci taky zmrzlinu!",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w110",
+    "czech": "mějte se hezky",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "mnyeyte se heski",
+    "transcriptionCyr": "мнєйте се гескі",
+    "ukrainian": "всього найкращого",
+    "example": "Mějte se hezky, nashledanou!",
+    "tags": [
+      "greetings"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w111",
+    "czech": "jak se jmenujete?",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "yak se ymenuyete",
+    "transcriptionCyr": "йак се йменуйете",
+    "ukrainian": "як вас звати?",
+    "example": "Dobrý den, jak se jmenujete?",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w112",
+    "czech": "prodavač",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "prodavach",
+    "transcriptionCyr": "продавач",
+    "ukrainian": "продавець",
+    "example": "Prodavač mi poradil dobré víno.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w113",
+    "czech": "Rakousko",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "rakousko",
+    "transcriptionCyr": "ракоуско",
+    "ukrainian": "Австрія",
+    "example": "Rakousko sousedí s Českem.",
+    "tags": [
+      "places"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w114",
+    "czech": "manažer",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "manazher",
+    "transcriptionCyr": "манажер",
+    "ukrainian": "менеджер",
+    "example": "Manažer vede tým deseti lidí.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w115",
+    "czech": "těší mě",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "tyeshii mnye",
+    "transcriptionCyr": "тєшіі мнє",
+    "ukrainian": "радий знайомству",
+    "example": "Těší mě, já jsem Pavel.",
+    "tags": [
+      "greetings",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w116",
+    "czech": "měj se hezky",
+    "gender": null,
+    "type": "phrase",
+    "transcription": "mnyey se heski",
+    "transcriptionCyr": "мнєй се гескі",
+    "ukrainian": "гарного дня",
+    "example": "Měj se hezky, ahoj!",
+    "tags": [
+      "greetings"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w117",
+    "czech": "znáte",
+    "gender": null,
+    "type": "verb",
+    "transcription": "znaate",
+    "transcriptionCyr": "знаате",
+    "ukrainian": "ви знаєте",
+    "example": "Znáte tuto restauraci?",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w118",
+    "czech": "český",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "cheskii",
+    "transcriptionCyr": "ческіі",
+    "ukrainian": "чеський",
+    "example": "Český jazyk je krásný.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w119",
+    "czech": "pozdravy",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "pozdravi",
+    "transcriptionCyr": "поздраві",
+    "ukrainian": "привітання",
+    "example": "Pošli mu srdečné pozdravy.",
+    "tags": [
+      "greetings"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w120",
+    "czech": "čtěte",
+    "gender": null,
+    "type": "verb",
+    "transcription": "chtyete",
+    "transcriptionCyr": "чтєте",
+    "ukrainian": "читайте",
+    "example": "Čtěte prosím nahlas.",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w121",
+    "czech": "pečlivě",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "pechlivye",
+    "transcriptionCyr": "печлівйе",
+    "ukrainian": "ретельно, уважно",
+    "example": "Čtěte pečlivě instrukce.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w122",
+    "czech": "vyslovujte",
+    "gender": null,
+    "type": "verb",
+    "transcription": "vislovuyte",
+    "transcriptionCyr": "вісловуйте",
+    "ukrainian": "вимовляйте",
+    "example": "Vyslovujte správně každé slovo.",
+    "tags": [
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w123",
+    "czech": "délka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "deelka",
+    "transcriptionCyr": "деелка",
+    "ukrainian": "довжина",
+    "example": "Délka samohlásek je důležitá.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w124",
+    "czech": "Irsko",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "irsko",
+    "transcriptionCyr": "ірско",
+    "ukrainian": "Ірландія",
+    "example": "Irsko je zelený ostrov.",
+    "tags": [
+      "places"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w125",
+    "czech": "učitel",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "uchitel",
+    "transcriptionCyr": "учітел",
+    "ukrainian": "вчитель",
+    "example": "Učitel vysvětluje gramatiku.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w126",
+    "czech": "Maďarsko",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "madyarsko",
+    "transcriptionCyr": "мадьарско",
+    "ukrainian": "Угорщина",
+    "example": "Maďarsko je jižní soused Slovenska.",
+    "tags": [
+      "places"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w127",
+    "czech": "řidič",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "rzhidich",
+    "transcriptionCyr": "ржідіч",
+    "ukrainian": "водій",
+    "example": "Řidič autobusu zastavil.",
+    "tags": [
+      "vocabulary"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w128",
+    "czech": "špatně",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "shpatnye",
+    "transcriptionCyr": "шпатнє",
+    "ukrainian": "погано",
+    "example": "Cítím se špatně.",
+    "tags": [
+      "vocabulary",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w129",
+    "czech": "vily",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "vili",
+    "transcriptionCyr": "вілі",
+    "ukrainian": "вілли (коротке i)",
+    "example": "Na kopci stojí krásné vily.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w130",
+    "czech": "víly",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "viili",
+    "transcriptionCyr": "віілі",
+    "ukrainian": "феї (довге í)",
+    "example": "Víly tančily v lese.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w131",
+    "czech": "dám",
+    "gender": null,
+    "type": "verb",
+    "transcription": "daam",
+    "transcriptionCyr": "даам",
+    "ukrainian": "я дам (довге á)",
+    "example": "Dám ti to zítra.",
+    "tags": [
+      "pronunciation",
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w132",
+    "czech": "dam",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "dam",
+    "transcriptionCyr": "дам",
+    "ukrainian": "дамба (коротке a)",
+    "example": "U řeky je stará dam.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w133",
+    "czech": "mile",
+    "gender": null,
+    "type": "adverb",
+    "transcription": "mile",
+    "transcriptionCyr": "міле",
+    "ukrainian": "мило / приємно (коротке e)",
+    "example": "Bylo to mile překvapení.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w134",
+    "czech": "milé",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "milee",
+    "transcriptionCyr": "мілее",
+    "ukrainian": "милі / дорогі (довге é)",
+    "example": "Milé dámy a pánové.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w135",
+    "czech": "kůl",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "kuul",
+    "transcriptionCyr": "куул",
+    "ukrainian": "стовп (довге ů)",
+    "example": "Zatloukl kůl do země.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w136",
+    "czech": "kul",
+    "gender": null,
+    "type": "verb",
+    "transcription": "kul",
+    "transcriptionCyr": "кул",
+    "ukrainian": "котив (коротке u)",
+    "example": "Kul kouli po podlaze.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w137",
+    "czech": "mlaty",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "mlati",
+    "transcriptionCyr": "млаті",
+    "ukrainian": "токи (коротке y)",
+    "example": "Staré mlaty jsou na farmě.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w138",
+    "czech": "mladý",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "mladii",
+    "transcriptionCyr": "младіі",
+    "ukrainian": "молодий (довге ý)",
+    "example": "Je to mladý muž.",
+    "tags": [
+      "pronunciation",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w139",
+    "czech": "móda",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "mooda",
+    "transcriptionCyr": "моода",
+    "ukrainian": "мода (довге ó)",
+    "example": "Sleduje nejnovější módu.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w140",
+    "czech": "mražení",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "mrazhenii",
+    "transcriptionCyr": "мраженіі",
+    "ukrainian": "заморожування (ž = ж)",
+    "example": "Mražení potravin je praktické.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w141",
+    "czech": "mrazení",
+    "gender": "n",
+    "type": "noun",
+    "transcription": "mrazenii",
+    "transcriptionCyr": "мразеніі",
+    "ukrainian": "морозіння (z = з)",
+    "example": "Cítím mrazení v zádech.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w142",
+    "czech": "hodit",
+    "gender": null,
+    "type": "verb",
+    "transcription": "hodit",
+    "transcriptionCyr": "годіт",
+    "ukrainian": "кинути (h = г)",
+    "example": "Hoď mi ten míč!",
+    "tags": [
+      "pronunciation",
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w143",
+    "czech": "chodit",
+    "gender": null,
+    "type": "verb",
+    "transcription": "khodit",
+    "transcriptionCyr": "ходіт",
+    "ukrainian": "ходити (ch = х)",
+    "example": "Chodím do práce pěšky.",
+    "tags": [
+      "pronunciation",
+      "verbs"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w144",
+    "czech": "ďas",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "dyas",
+    "transcriptionCyr": "дьас",
+    "ukrainian": "диявол (ď = дь)",
+    "example": "Ďas ho pokoušel.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w145",
+    "czech": "dar",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "dar",
+    "transcriptionCyr": "дар",
+    "ukrainian": "подарунок (тверде d)",
+    "example": "Dostal krásný dar.",
+    "tags": [
+      "pronunciation",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w146",
+    "czech": "tuk",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "tuk",
+    "transcriptionCyr": "тук",
+    "ukrainian": "жир (тверде t)",
+    "example": "Maso má hodně tuku.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w147",
+    "czech": "ťuk",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "tyuk",
+    "transcriptionCyr": "тьук",
+    "ukrainian": "стук (ť = ть)",
+    "example": "Slyšel jsem ťukání na dveře.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w148",
+    "czech": "hodný",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "hodnii",
+    "transcriptionCyr": "годніі",
+    "ukrainian": "добрий (довге ý)",
+    "example": "Je to hodný člověk.",
+    "tags": [
+      "pronunciation",
+      "basic"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w149",
+    "czech": "hodní",
+    "gender": null,
+    "type": "adjective",
+    "transcription": "hodnii",
+    "transcriptionCyr": "годніі",
+    "ukrainian": "добрі (довге í)",
+    "example": "Buďte hodní, děti!",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w150",
+    "czech": "díky",
+    "gender": null,
+    "type": "interjection",
+    "transcription": "dyiiki",
+    "transcriptionCyr": "дьіікі",
+    "ukrainian": "завдяки / спасибі (довге í)",
+    "example": "Díky za pomoc!",
+    "tags": [
+      "pronunciation",
+      "greetings"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w151",
+    "czech": "dýky",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "diiki",
+    "transcriptionCyr": "діікі",
+    "ukrainian": "кинджали (довге ý)",
+    "example": "Na stěně visely staré dýky.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "w152",
+    "czech": "stěn",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "styen",
+    "transcriptionCyr": "стєн",
+    "ukrainian": "стін (ě = є)",
+    "example": "Barva stěn je bílá.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w153",
+    "czech": "děkuju",
+    "gender": null,
+    "type": "verb",
+    "transcription": "dyekuyu",
+    "transcriptionCyr": "дєкуйу",
+    "ukrainian": "дякую (dě = дє)",
+    "example": "Děkuju, jsi hodný.",
+    "tags": [
+      "pronunciation",
+      "greetings"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w154",
+    "czech": "deka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "deka",
+    "transcriptionCyr": "дека",
+    "ukrainian": "ковдра (тверде de)",
+    "example": "Přikryj se dekou.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w155",
+    "czech": "koš",
+    "gender": "mi",
+    "type": "noun",
+    "transcription": "kosh",
+    "transcriptionCyr": "кош",
+    "ukrainian": "кошик (š = ш)",
+    "example": "Hoď to do koše.",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w156",
+    "czech": "kos",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "kos",
+    "transcriptionCyr": "кос",
+    "ukrainian": "дрізд (s = с)",
+    "example": "Kos zpívá v zahradě.",
+    "tags": [
+      "pronunciation",
+      "animals"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w157",
+    "czech": "čočka",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "chochka",
+    "transcriptionCyr": "чочка",
+    "ukrainian": "сочевиця / лінза",
+    "example": "Na oběd bude čočková polévka.",
+    "tags": [
+      "food"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "w158",
+    "czech": "paní",
+    "gender": "f",
+    "type": "noun",
+    "transcription": "panii",
+    "transcriptionCyr": "паніі",
+    "ukrainian": "пані (довге í)",
+    "example": "Dobrý den, paní Nováková.",
+    "tags": [
+      "pronunciation",
+      "greetings"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "w159",
+    "czech": "páni",
+    "gender": "ma",
+    "type": "noun",
+    "transcription": "paani",
+    "transcriptionCyr": "паані",
+    "ukrainian": "панове (довге á)",
+    "example": "Vážení páni, vítejte!",
+    "tags": [
+      "pronunciation"
+    ],
+    "difficulty": 2
+  }
 ]

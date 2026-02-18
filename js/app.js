@@ -208,8 +208,8 @@ const App = (() => {
     ).join('');
 
     // Gender label
-    const genderMap = { m: 'муж.', f: 'жін.', n: 'сер.' };
-    const genderLabel = word.gender ? `<span class="card-gender">${genderMap[word.gender] || ''}</span>` : '';
+    const genderMap = { ma: 'Ma', mi: 'Mi', f: 'F', n: 'N' };
+    const genderLabel = word.gender ? `<span class="card-gender gender-${word.gender}">${genderMap[word.gender] || ''}</span>` : '';
 
     container.innerHTML = `
       <div class="card-split">
