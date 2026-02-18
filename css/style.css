@@ -438,22 +438,6 @@ button:focus-visible {
 }
 
 
-/* Leitner Box Indicator */
-.card-box-indicator {
-  display: flex;
-  gap: 3px;
-}
-
-.box-pip {
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  background: var(--border);
-}
-
-.box-pip.filled {
-  background: var(--success);
-}
 
 /* ===== Leitner Review Buttons ===== */
 .review-buttons {
