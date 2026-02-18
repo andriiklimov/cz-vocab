@@ -1,91 +1,87 @@
 /**
- * audio.js — Czech pronunciation via Google Translate TTS
- * Falls back to Web Speech API if unavailable
+ * audio.js — Czech pronunciation
+ * Primary: Google TTS via translate.googleapis.com
+ * Fallback: Web Speech API
  */
 const Audio = (() => {
   let currentAudio = null;
-  let voicesLoaded = false;
 
   function init() {
-    // Pre-load voices for fallback
+    // Pre-load voices for SpeechSynthesis fallback
     if ('speechSynthesis' in window) {
-      const loadVoices = () => {
-        window.speechSynthesis.getVoices();
-        voicesLoaded = true;
-      };
-      loadVoices();
+      window.speechSynthesis.getVoices();
       if (window.speechSynthesis.onvoiceschanged !== undefined) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
+        window.speechSynthesis.onvoiceschanged = () => {
+          window.speechSynthesis.getVoices();
+        };
       }
     }
   }
 
-  /**
-   * Speak Czech text — tries Google TTS first, then SpeechSynthesis
-   */
   function speak(text) {
     if (!text) return;
 
-    // Stop any currently playing audio
+    // Stop anything currently playing
+    _stop();
+
+    // Try Google TTS
+    try {
+      const encoded = encodeURIComponent(text);
+      const url = 'https://translate.googleapis.com/translate_tts?ie=UTF-8&tl=cs&client=gtx&q=' + encoded;
+
+      const audio = new window.Audio(url);
+      currentAudio = audio;
+
+      // Simple timeout fallback
+      const fallbackTimer = setTimeout(() => {
+        _stop();
+        _speakSynthesis(text);
+      }, 4000);
+
+      audio.addEventListener('ended', () => clearTimeout(fallbackTimer));
+      audio.addEventListener('error', () => {
+        clearTimeout(fallbackTimer);
+        _speakSynthesis(text);
+      });
+
+      audio.play().catch(() => {
+        clearTimeout(fallbackTimer);
+        _speakSynthesis(text);
+      });
+    } catch (e) {
+      _speakSynthesis(text);
+    }
+  }
+
+  function _stop() {
     if (currentAudio) {
       currentAudio.pause();
-      currentAudio.currentTime = 0;
+      currentAudio.src = '';
       currentAudio = null;
     }
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }
-
-    // Try Google Translate TTS
-    const encoded = encodeURIComponent(text);
-    const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&tl=cs&client=gtx&q=${encoded}`;
-
-    const audio = new window.Audio();
-    audio.crossOrigin = 'anonymous';
-    currentAudio = audio;
-
-    audio.oncanplaythrough = () => {
-      audio.play().catch(() => _speakFallback(text));
-    };
-
-    audio.onerror = () => {
-      _speakFallback(text);
-    };
-
-    // Timeout — if audio doesn't load in 3s, use fallback
-    const timeout = setTimeout(() => {
-      if (audio.readyState < 3) {
-        audio.src = '';
-        _speakFallback(text);
-      }
-    }, 3000);
-
-    audio.onended = () => clearTimeout(timeout);
-    audio.src = url;
-    audio.load();
   }
 
-  /**
-   * Web Speech API fallback
-   */
-  function _speakFallback(text) {
+  function _speakSynthesis(text) {
     if (!('speechSynthesis' in window)) return;
 
     const synth = window.speechSynthesis;
     synth.cancel();
 
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'cs-CZ';
-    utterance.rate = 0.85;
-    utterance.pitch = 1;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'cs-CZ';
+    utter.rate = 0.85;
 
-    // Try to find the best Czech voice
     const voices = synth.getVoices();
-    const czechVoice = voices.find(v => v.lang === 'cs-CZ')
+    // Prefer online/neural Czech voice
+    const czech = voices.find(v => v.lang === 'cs-CZ' && v.name.includes('Online'))
+      || voices.find(v => v.lang === 'cs-CZ')
       || voices.find(v => v.lang.startsWith('cs'));
-    if (czechVoice) utterance.voice = czechVoice;
+    if (czech) utter.voice = czech;
 
-    synth.speak(utterance);
+    synth.speak(utter);
   }
 
   function isAvailable() {
