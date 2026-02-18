@@ -8,9 +8,7 @@ const App = (() => {
   let learnFilter = 'due'; // 'all' | 'due' (due = new + not learned + due today)
 
   let currentCardIndex = 0;
-  let gridVisible = false;
   let cachedDeck = []; // stable shuffled deck for current filter
-  let gridRenderToken = 0;
 
   /* ---------- Shuffle (Fisher-Yates) ---------- */
   function shuffle(arr) {
@@ -117,8 +115,6 @@ const App = (() => {
     }
 
     rebuildDeck();
-    if (gridVisible) renderCards();
-    else gridRenderToken++;
     renderFlashcard();
   }
 
@@ -198,49 +194,6 @@ const App = (() => {
     if (counter) counter.textContent = `${currentCardIndex + 1} / ${filtered.length}`;
   }
 
-  /* ---------- Render Cards ---------- */
-
-  function renderCards() {
-    const grid = document.getElementById('cardGrid');
-    if (!grid) return;
-
-    const filtered = cachedDeck;
-    grid.innerHTML = '';
-
-    if (filtered.length === 0) {
-      grid.innerHTML = `
-        <div class="empty-state">
-          <div class="empty-state-icon">📭</div>
-          <div class="empty-state-text">Немає карток для відображення</div>
-        </div>`;
-      return;
-    }
-
-    const renderToken = ++gridRenderToken;
-    const batchSize = 24;
-    let index = 0;
-
-    const appendBatch = () => {
-      if (renderToken !== gridRenderToken) return;
-
-      const fragment = document.createDocumentFragment();
-      const end = Math.min(index + batchSize, filtered.length);
-
-      for (; index < end; index++) {
-        fragment.appendChild(createCardElement(filtered[index]));
-      }
-
-      grid.appendChild(fragment);
-
-      if (index < filtered.length) {
-        requestAnimationFrame(appendBatch);
-      }
-    };
-
-    appendBatch();
-
-    updateStats();
-  }
 
   function createCardElement(word) {
     const container = document.createElement('div');
@@ -318,7 +271,6 @@ const App = (() => {
       showToast(added ? 'Додано до обраного' : 'Видалено з обраного');
       if (currentMode === 'favorites') {
         renderFlashcard();
-        if (gridVisible) renderCards();
       }
     });
 
@@ -337,7 +289,6 @@ const App = (() => {
       currentCardIndex++;
       renderFlashcard('left');
       updateStats();
-      if (gridVisible) renderCards();
     });
 
     container.querySelector('.review-btn.wrong').addEventListener('click', (e) => {
@@ -346,7 +297,6 @@ const App = (() => {
       currentCardIndex++;
       renderFlashcard('left');
       updateStats();
-      if (gridVisible) renderCards();
     });
 
     return container;
@@ -395,7 +345,6 @@ const App = (() => {
       currentCardIndex = 0;
       rebuildDeck();
       renderFlashcard();
-      if (gridVisible) renderCards();
       updateStats();
     });
 
@@ -415,16 +364,16 @@ const App = (() => {
       renderFlashcard('left');
     });
 
-    // Show all toggle
-    document.getElementById('showAllBtn')?.addEventListener('click', () => {
-      const grid = document.getElementById('cardGrid');
-      const btn = document.getElementById('showAllBtn');
-      if (!grid || !btn) return;
-      gridVisible = !gridVisible;
-      grid.classList.toggle('hidden', !gridVisible);
-      btn.textContent = gridVisible ? '🔼 Сховати всі слова' : '📋 Показати всі слова';
-      if (gridVisible) renderCards();
-      else gridRenderToken++;
+    // Reset progress
+    document.getElementById('resetBtn')?.addEventListener('click', () => {
+      if (confirm('Скинути весь прогрес? Це видалить усі дані вивчення.')) {
+        Storage.resetProgress();
+        currentCardIndex = 0;
+        rebuildDeck();
+        renderFlashcard();
+        updateStats();
+        showToast('Прогрес скинуто');
+      }
     });
 
     // Swipe gestures for flashcard area

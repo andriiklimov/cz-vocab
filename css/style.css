@@ -93,6 +93,29 @@ button:focus-visible {
   border-color: var(--accent);
 }
 
+/* ===== Reset Button ===== */
+.reset-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.reset-btn:hover {
+  color: var(--heart);
+  background: var(--accent-light);
+  border-color: var(--heart);
+}
+
 /* ===== Stats Bar ===== */
 .stats-bar {
   display: flex;
@@ -195,15 +218,6 @@ button:focus-visible {
   vertical-align: middle;
 }
 
-/* ===== Card Grid ===== */
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 /* ===== Card ===== */
 .card-container {
@@ -667,30 +681,7 @@ button:focus-visible {
   animation: slideInLeft 0.25s ease forwards;
 }
 
-/* ===== Show All Toggle ===== */
-.show-all-toggle {
-  text-align: center;
-  padding: 1rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-}
 
-.show-all-btn {
-  min-height: 44px;
-  padding: 0.7rem 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: all var(--transition);
-}
-
-.show-all-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-light);
-}
 
 /* ===== Hidden ===== */
 .hidden {
@@ -772,26 +763,12 @@ button:focus-visible {
     padding: 0.75rem 1.25rem;
   }
 
-  .card-grid {
-    padding: 1rem 1.25rem;
-  }
-
   .flashcard-section {
     padding: 0.5rem 1.25rem 0;
   }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (min-width: 901px) {
-  .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
-}
 
 /* ===== Scrollbar (webkit) ===== */
 ::-webkit-scrollbar {
