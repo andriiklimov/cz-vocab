@@ -14,7 +14,7 @@
   <script>
     // Force clear old service worker caches on version change
     (function() {
-      var CURRENT = 'v6';
+      var CURRENT = 'v7';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(function(regs) {

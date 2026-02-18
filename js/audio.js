@@ -1,12 +1,14 @@
 /**
  * audio.js — Czech pronunciation
- * Strategy: try Google TTS via hidden <audio> element first,
- * fallback to Web Speech API with delay workarounds.
+ * Strategy: Google TTS via <audio> with error/timeout fallback to SpeechSynthesis.
+ * On PC browsers (Edge/Chrome) Google TTS is often blocked by tracking prevention,
+ * so we detect failure quickly and fall back to SpeechSynthesis.
  */
 const Audio = (() => {
   let audioEl = null;
   let voices = [];
   let czechVoice = null;
+  let synthReady = false;
 
   function init() {
     // Create a persistent audio element in the DOM
@@ -15,7 +17,7 @@ const Audio = (() => {
     audioEl.style.display = 'none';
     document.body.appendChild(audioEl);
 
-    // Pre-load SpeechSynthesis voices as fallback
+    // Pre-load SpeechSynthesis voices
     if ('speechSynthesis' in window) {
       const loadV = () => {
         voices = speechSynthesis.getVoices();
@@ -23,6 +25,7 @@ const Audio = (() => {
           || voices.find(v => v.lang === 'cs-CZ')
           || voices.find(v => v.lang.startsWith('cs'))
           || null;
+        synthReady = voices.length > 0;
       };
       loadV();
       speechSynthesis.onvoiceschanged = loadV;
@@ -34,30 +37,61 @@ const Audio = (() => {
   function speak(text) {
     if (!text) return;
 
-    // Try Google TTS first — works in most browsers
+    // Try Google TTS first via <audio> element
     const url = 'https://translate.googleapis.com/translate_tts'
       + '?ie=UTF-8&tl=cs&client=gtx&q=' + encodeURIComponent(text);
 
-    audioEl.src = url;
-    const playPromise = audioEl.play();
+    // Set a timeout: if audio doesn't start playing within 1.5s, use fallback
+    let resolved = false;
+    const fallbackTimer = setTimeout(() => {
+      if (!resolved) {
+        resolved = true;
+        audioEl.pause();
+        audioEl.removeAttribute('src');
+        speakSynth(text);
+      }
+    }, 1500);
 
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Google TTS blocked (tracking prevention etc.) — fallback to SpeechSynthesis
-        speakFallback(text);
-      });
+    // On successful play
+    const onPlaying = () => {
+      resolved = true;
+      clearTimeout(fallbackTimer);
+      cleanup();
+    };
+
+    // On any error
+    const onError = () => {
+      if (!resolved) {
+        resolved = true;
+        clearTimeout(fallbackTimer);
+        cleanup();
+        speakSynth(text);
+      }
+    };
+
+    function cleanup() {
+      audioEl.removeEventListener('playing', onPlaying);
+      audioEl.removeEventListener('error', onError);
     }
+
+    audioEl.addEventListener('playing', onPlaying, { once: true });
+    audioEl.addEventListener('error', onError, { once: true });
+
+    audioEl.src = url;
+    const p = audioEl.play();
+    if (p && p.catch) p.catch(onError);
   }
 
-  function speakFallback(text) {
+  function speakSynth(text) {
     if (!('speechSynthesis' in window)) return;
 
     const synth = window.speechSynthesis;
     synth.cancel();
 
-    // Small delay after cancel() to avoid Chrome/Edge silent-speak bug
+    // Delay after cancel to avoid Chrome silent-speak bug
     setTimeout(() => {
-      if (!voices.length) {
+      // Re-check voices
+      if (!synthReady) {
         voices = synth.getVoices();
         czechVoice = voices.find(v => v.lang === 'cs-CZ')
           || voices.find(v => v.lang.startsWith('cs'))
@@ -72,18 +106,18 @@ const Audio = (() => {
 
       synth.speak(utter);
 
-      // Chrome resume workaround
+      // Chrome resume workaround for long utterances
       const timer = setInterval(() => {
         if (!synth.speaking) clearInterval(timer);
         else synth.resume();
       }, 5000);
       utter.onend = () => clearInterval(timer);
       utter.onerror = () => clearInterval(timer);
-    }, 100);
+    }, 150);
   }
 
   function isAvailable() {
-    return true; // always available — we have multiple strategies
+    return true;
   }
 
   return { init, speak, isAvailable };

@@ -197,23 +197,26 @@ const App = (() => {
     container.innerHTML = `
       <div class="card-split">
         <div class="card-left">
-          <button class="card-action-btn speak-btn" data-czech="${word.czech}" title="Вимова">🔊</button>
-          <div class="card-czech">${word.czech}</div>
-          <div class="card-type">${word.type} ${genderLabel}</div>
-          <div class="card-example">${word.example}</div>
-          <div class="card-left-bottom">
+          <div class="card-top-actions">
+            <button class="card-action-btn speak-btn" data-czech="${word.czech}" title="Вимова">🔊</button>
             <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране">
               ${isFav ? '❤️' : '🤍'}
             </button>
-            <div class="card-box-indicator">${pips}</div>
           </div>
+          <div class="card-czech">${word.czech}</div>
+          <div class="card-type">${word.type} ${genderLabel}</div>
+          <div class="card-example-row">
+            <span class="card-example">${word.example}</span>
+            <button class="card-action-btn speak-example-btn" data-czech="${word.example}" title="Вимова прикладу">🔊</button>
+          </div>
+          <div class="card-box-indicator">${pips}</div>
         </div>
         <div class="card-right">
           <div class="card-transcription">[${word.transcription}]</div>
           <div class="card-ukrainian">${word.ukrainian}</div>
           <div class="review-buttons">
-            <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗</button>
-            <button class="review-btn correct" data-word-id="${word.id}" title="Знаю">✓</button>
+            <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗ Не знаю</button>
+            <button class="review-btn correct" data-word-id="${word.id}" title="Знаю">✓ Знаю</button>
           </div>
         </div>
       </div>`;
@@ -232,8 +235,8 @@ const App = (() => {
       }
     });
 
-    // Speak buttons
-    container.querySelectorAll('.speak-btn').forEach(btn => {
+    // Speak buttons (word + example)
+    container.querySelectorAll('.speak-btn, .speak-example-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         Audio.speak(btn.dataset.czech);
@@ -325,6 +328,38 @@ const App = (() => {
       btn.textContent = gridVisible ? '🔼 Сховати всі слова' : '📋 Показати всі слова';
       if (gridVisible) renderCards();
     });
+
+    // Swipe gestures for flashcard area
+    const flashArea = document.getElementById('flashcardArea');
+    if (flashArea) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+
+      flashArea.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      flashArea.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchStartX - touchEndX;
+        const diffY = Math.abs(touchStartY - touchEndY);
+
+        // Only swipe if horizontal movement > 50px and greater than vertical
+        if (Math.abs(diffX) > 50 && Math.abs(diffX) > diffY) {
+          if (diffX > 0) {
+            // Swipe left → next card
+            currentCardIndex++;
+          } else {
+            // Swipe right → previous card
+            currentCardIndex--;
+          }
+          renderFlashcard();
+        }
+      }, { passive: true });
+    }
 
     // Set default active mode
     setMode('all');
