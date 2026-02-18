@@ -58,7 +58,13 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom);
   transition: background var(--transition), color var(--transition);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ===== Theme Toggle ===== */
@@ -75,8 +81,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -90,8 +96,8 @@ body {
 /* ===== Stats Bar ===== */
 .stats-bar {
   display: flex;
-  gap: 1rem;
-  padding: 0.75rem 1.25rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: auto;
@@ -130,7 +136,7 @@ body {
 
 /* ===== Controls ===== */
 .controls {
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -153,12 +159,13 @@ body {
 }
 
 .filter-btn {
-  padding: 0.4rem 0.85rem;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--bg-secondary);
   color: var(--text-secondary);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-family: var(--font);
   cursor: pointer;
   white-space: nowrap;
@@ -191,9 +198,9 @@ body {
 /* ===== Card Grid ===== */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -256,8 +263,8 @@ body {
   right: 0.5rem;
   bottom: 50%;
   transform: translateY(50%);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--bg-secondary);
@@ -282,6 +289,13 @@ body {
   justify-content: center;
   gap: 0.4rem;
   margin-top: 0.3rem;
+}
+
+.card-example-row .card-action-btn.speak-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 /* Front */
@@ -390,8 +404,8 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -495,7 +509,7 @@ body {
 .flashcard-section {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0.5rem 1.25rem 0;
+  padding: 0.5rem 0.75rem 0;
 }
 
 .flashcard-nav {
@@ -542,12 +556,13 @@ body {
 }
 
 .learn-filter-btn {
-  padding: 0.35rem 1rem;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg-secondary);
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all var(--transition);
 }
@@ -612,11 +627,12 @@ body {
 /* ===== Show All Toggle ===== */
 .show-all-toggle {
   text-align: center;
-  padding: 1.5rem 1.25rem 0.5rem;
+  padding: 1rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
 }
 
 .show-all-btn {
-  padding: 0.6rem 1.5rem;
+  min-height: 44px;
+  padding: 0.7rem 1.5rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg-secondary);
@@ -641,7 +657,7 @@ body {
 /* ===== Toast ===== */
 .toast {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   background: var(--text-primary);
@@ -663,10 +679,6 @@ body {
 
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
   .card-split {
     flex-direction: column;
   }
@@ -693,22 +705,36 @@ body {
     font-size: 1.1rem;
   }
 
+}
+
+@media (min-width: 601px) {
+  .stats-bar {
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
   .controls {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.25rem;
   }
 
   .card-grid {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.25rem;
   }
 
   .flashcard-section {
-    padding: 0.5rem 0.75rem 0;
+    padding: 0.5rem 1.25rem 0;
   }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 901px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }
 
@@ -749,7 +775,8 @@ body {
 }
 
 .install-banner button {
-  padding: 0.3rem 0.75rem;
+  min-height: 44px;
+  padding: 0.45rem 0.85rem;
   border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
   background: var(--accent);

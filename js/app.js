@@ -10,6 +10,7 @@ const App = (() => {
   let currentCardIndex = 0;
   let gridVisible = false;
   let cachedDeck = []; // stable shuffled deck for current filter
+  let gridRenderToken = 0;
 
   /* ---------- Shuffle (Fisher-Yates) ---------- */
   function shuffle(arr) {
@@ -49,7 +50,6 @@ const App = (() => {
     buildCategoryFilters();
     rebuildDeck();
     renderFlashcard();
-    renderCards();
     updateStats();
     bindEvents();
 
@@ -117,7 +117,8 @@ const App = (() => {
     }
 
     rebuildDeck();
-    renderCards();
+    if (gridVisible) renderCards();
+    else gridRenderToken++;
     renderFlashcard();
   }
 
@@ -215,9 +216,28 @@ const App = (() => {
       return;
     }
 
-    filtered.forEach(word => {
-      grid.appendChild(createCardElement(word));
-    });
+    const renderToken = ++gridRenderToken;
+    const batchSize = 24;
+    let index = 0;
+
+    const appendBatch = () => {
+      if (renderToken !== gridRenderToken) return;
+
+      const fragment = document.createDocumentFragment();
+      const end = Math.min(index + batchSize, filtered.length);
+
+      for (; index < end; index++) {
+        fragment.appendChild(createCardElement(filtered[index]));
+      }
+
+      grid.appendChild(fragment);
+
+      if (index < filtered.length) {
+        requestAnimationFrame(appendBatch);
+      }
+    };
+
+    appendBatch();
 
     updateStats();
   }
@@ -243,7 +263,7 @@ const App = (() => {
       <div class="card-split">
         <div class="card-left">
           <div class="card-top-actions">
-            <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране">
+            <button class="card-action-btn fav-btn ${isFav ? 'fav-active' : ''}" data-word-id="${word.id}" title="Обране" aria-label="Додати або видалити з обраного">
               ${isFav ? '❤️' : '🤍'}
             </button>
           </div>
@@ -251,11 +271,12 @@ const App = (() => {
           <div class="card-type">${word.type} ${genderLabel}</div>
           <div class="card-example-row">
             <span class="card-example">${word.example}</span>
+            <button class="card-action-btn speak-btn" data-czech="${word.example}" title="Вимова фрази" aria-label="Відтворити вимову фрази">🔊</button>
           </div>
           <div class="card-box-indicator">${pips}</div>
-          <button class="card-speak-float speak-btn" data-czech="${word.czech}" title="Вимова">🔊</button>
+          <button class="card-speak-float speak-btn" data-czech="${word.czech}" title="Вимова" aria-label="Відтворити вимову">🔊</button>
         </div>
-        <div class="card-right" data-revealed="false">
+        <div class="card-right" data-revealed="false" role="button" tabindex="0" aria-label="Показати переклад">
           <div class="card-answer-hidden">
             <div class="reveal-placeholder">?</div>
             <div class="reveal-hint">натисни щоб побачити</div>
@@ -274,9 +295,20 @@ const App = (() => {
 
     // Reveal translation on right panel click
     const rightPanel = container.querySelector('.card-right');
+    const reveal = () => {
+      rightPanel.dataset.revealed = 'true';
+    };
+
     rightPanel.addEventListener('click', (e) => {
       if (e.target.closest('.review-btn')) return;
-      rightPanel.dataset.revealed = 'true';
+      reveal();
+    });
+
+    rightPanel.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        reveal();
+      }
     });
 
     // Favorite toggle
@@ -395,6 +427,7 @@ const App = (() => {
       grid.classList.toggle('hidden', !gridVisible);
       btn.textContent = gridVisible ? '🔼 Сховати всі слова' : '📋 Показати всі слова';
       if (gridVisible) renderCards();
+      else gridRenderToken++;
     });
 
     // Swipe gestures for flashcard area
@@ -403,10 +436,12 @@ const App = (() => {
       let touchStartX = 0;
       let touchStartY = 0;
       let touchEndX = 0;
+      let touchStartTime = 0;
 
       flashArea.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
         touchStartY = e.changedTouches[0].screenY;
+        touchStartTime = Date.now();
       }, { passive: true });
 
       flashArea.addEventListener('touchend', (e) => {
@@ -414,9 +449,12 @@ const App = (() => {
         const touchEndY = e.changedTouches[0].screenY;
         const diffX = touchStartX - touchEndX;
         const diffY = Math.abs(touchStartY - touchEndY);
+        const elapsed = Date.now() - touchStartTime;
+        const width = flashArea.clientWidth || window.innerWidth || 360;
+        const threshold = Math.max(30, Math.min(90, Math.round(width * 0.18)));
 
-        // Only swipe if horizontal movement > 50px and greater than vertical
-        if (Math.abs(diffX) > 50 && Math.abs(diffX) > diffY) {
+        // Only swipe if horizontal movement passes threshold and is dominant
+        if (Math.abs(diffX) > threshold && Math.abs(diffX) > diffY && elapsed < 700) {
           if (diffX > 0) {
             // Swipe left → next card
             currentCardIndex++;

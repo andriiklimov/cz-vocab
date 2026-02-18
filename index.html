@@ -12,22 +12,16 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇨🇿</text></svg>">
   <link rel="stylesheet" href="css/style.css">
   <script>
-    // Force clear old service worker caches on version change
+    // Non-destructive SW update check on version change
     (function() {
-      var CURRENT = 'v15';
+      var CURRENT = 'v16';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.getRegistrations().then(function(regs) {
-            regs.forEach(function(r) { r.unregister(); });
-          });
-        }
-        if ('caches' in window) {
-          caches.keys().then(function(keys) {
-            keys.forEach(function(k) { caches.delete(k); });
-          });
-        }
         localStorage.setItem('czvocab_sw_ver', CURRENT);
-        setTimeout(function() { location.reload(true); }, 500);
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistration().then(function(reg) {
+            if (reg) reg.update();
+          });
+        }
       }
     })();
   </script>
@@ -36,8 +30,8 @@
   <!-- Install Banner -->
   <div class="install-banner" id="installBanner">
     <span>Встановити додаток для офлайн-доступу</span>
-    <button id="installBtn">Встановити</button>
-    <button class="dismiss" id="installDismiss">✕</button>
+    <button id="installBtn" aria-label="Встановити додаток">Встановити</button>
+    <button class="dismiss" id="installDismiss" aria-label="Закрити банер встановлення">✕</button>
   </div>
 
   <!-- Stats -->
@@ -54,7 +48,7 @@
       <span class="stat-value" id="statDue">0</span>
       <span class="stat-label">На сьогодні</span>
     </div>
-    <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+    <button class="theme-toggle" id="themeToggle" title="Змінити тему" aria-label="Змінити тему">🌙</button>
   </section>
 
   <!-- Controls -->
@@ -70,9 +64,9 @@
   <!-- Single Flashcard Mode -->
   <section class="flashcard-section" id="flashcardSection">
     <div class="flashcard-nav">
-      <button class="flashcard-nav-btn" id="prevCard" title="Попередня">◀</button>
+      <button class="flashcard-nav-btn" id="prevCard" title="Попередня" aria-label="Попередня картка">◀</button>
       <span class="flashcard-counter" id="flashcardCounter">1 / 20</span>
-      <button class="flashcard-nav-btn" id="nextCard" title="Наступна">▶</button>
+      <button class="flashcard-nav-btn" id="nextCard" title="Наступна" aria-label="Наступна картка">▶</button>
     </div>
     <div class="learn-filter-row">
       <button class="learn-filter-btn" id="learnFilterBtn">🎯 Для вивчення</button>
