@@ -67,30 +67,70 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* ===== Theme Toggle ===== */
+/* ===== Theme Toggle (pill switch) ===== */
 
 .theme-toggle {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 50%;
+  background: none;
+  border: none;
   padding: 0;
   cursor: pointer;
-  font-size: 1rem;
-  color: var(--text-primary);
-  transition: all var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
   margin-left: auto;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.theme-toggle:hover {
-  opacity: 1;
-  background: var(--accent-light);
-  border-color: var(--accent);
+.toggle-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 64px;
+  height: 32px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: background var(--transition);
+}
+
+.theme-toggle.is-dark .toggle-track {
+  background: #334155;
+}
+
+.toggle-icon {
+  position: relative;
+  z-index: 1;
+  fill: #f59e0b;
+  stroke: #f59e0b;
+  transition: opacity var(--transition);
+}
+
+.moon-icon {
+  fill: #94a3b8;
+  stroke: none;
+}
+
+.theme-toggle.is-dark .sun-icon {
+  opacity: 0.4;
+}
+
+.theme-toggle.is-dark .moon-icon {
+  fill: #fbbf24;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform var(--transition);
+}
+
+.theme-toggle.is-dark .toggle-thumb {
+  transform: translateX(32px);
 }
 
 /* ===== Reset Button ===== */

@@ -45,28 +45,24 @@ const Audio = (() => {
     const url = 'https://translate.googleapis.com/translate_tts'
       + '?ie=UTF-8&tl=cs&client=gtx&q=' + encodeURIComponent(text);
 
-    // Stop any current playback first
+    // Stop any current playback
     audioEl.pause();
-    audioEl.removeAttribute('src');
-    audioEl.load();
+    audioEl.currentTime = 0;
 
     audioEl.onerror = () => {
       googleBlocked = true;
       speakSynth(text);
     };
 
-    audioEl.oncanplaythrough = () => {
-      audioEl.oncanplaythrough = null;
-      const p = audioEl.play();
-      if (p && p.catch) {
-        p.catch(() => {
-          googleBlocked = true;
-          speakSynth(text);
-        });
-      }
-    };
-
+    // Set src and play immediately (must stay in user gesture context for iOS)
     audioEl.src = url;
+    const p = audioEl.play();
+    if (p && p.catch) {
+      p.catch(() => {
+        googleBlocked = true;
+        speakSynth(text);
+      });
+    }
   }
 
   function speakSynth(text) {

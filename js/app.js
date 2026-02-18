@@ -61,7 +61,7 @@ const App = (() => {
     document.documentElement.setAttribute('data-theme', theme);
     Storage.setTheme(theme);
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    if (btn) btn.classList.toggle('is-dark', theme === 'dark');
   }
 
   function toggleTheme() {
