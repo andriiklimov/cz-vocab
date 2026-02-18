@@ -282,6 +282,17 @@ button:focus-visible {
   border-color: var(--accent);
 }
 
+/* SVG speaker icon styling */
+.speak-icon {
+  fill: var(--accent);
+  transition: fill var(--transition);
+}
+
+.card-action-btn:hover .speak-icon,
+.card-speak-float:hover .speak-icon {
+  fill: var(--accent-hover);
+}
+
 /* Example sentence */
 .card-example-row {
   display: flex;
