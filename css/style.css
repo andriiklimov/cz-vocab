@@ -99,24 +99,27 @@ button:focus-visible {
 .toggle-icon {
   position: relative;
   z-index: 1;
-  fill: #fff;
-  stroke: #fff;
   transition: opacity var(--transition);
 }
 
+.sun-icon {
+  fill: #f59e0b;
+  stroke: #f59e0b;
+  opacity: 1;
+}
+
 .moon-icon {
-  fill: #fff;
+  fill: #818cf8;
   stroke: none;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .theme-toggle.is-dark .sun-icon {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .theme-toggle.is-dark .moon-icon {
   opacity: 1;
-  fill: #fff;
 }
 
 .toggle-thumb {
