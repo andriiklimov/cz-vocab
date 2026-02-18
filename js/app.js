@@ -235,6 +235,7 @@ const App = (() => {
           </div>
           <div class="card-answer-revealed">
             <div class="card-transcription">[${word.transcription}]</div>
+            <div class="card-transcription-cyr">[${word.transcriptionCyr}]</div>
             <div class="card-ukrainian">${word.ukrainian}</div>
             <div class="review-buttons">
               <button class="review-btn wrong" data-word-id="${word.id}" title="Не знаю">✗ Не знаю</button>

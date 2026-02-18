@@ -115,6 +115,7 @@ overrides_latin = {
     'w095': 'blaazen',             # á→aa
     'w105': 'sem f praatsi',       # jsem→sem (colloquial), v→f before p
     'w106': 'gdo',                 # k→g before voiced d
+    'w041': 'pitsa',                # pizza pronounced [pitsa]
     'w108': 'aytaak',              # IT'ák
     'w110': 'mnyeyte se heski',    # mě→mnye, z→s before k
     'w111': 'yak se ymenuyete',    # jak→yak, jm→ym
@@ -126,6 +127,7 @@ overrides_latin = {
 overrides_cyr = {
     'w005': 'на схледаноу',
     'w047': 'немогл бісте',
+    'w041': 'піца',
     'w105': 'сем ф прааці',
     'w106': 'ґдо',
     'w108': 'айтаак',

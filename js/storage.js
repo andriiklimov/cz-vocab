@@ -75,7 +75,12 @@ const Storage = (() => {
   /* ---------- Theme ---------- */
 
   function getTheme() {
-    return _get(KEYS.THEME) || 'light';
+    const saved = _get(KEYS.THEME);
+    if (saved) return saved;
+    // Auto-detect: device preference or time-based
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+    const hour = new Date().getHours();
+    return (hour >= 20 || hour < 7) ? 'dark' : 'light';
   }
 
   function setTheme(theme) {
