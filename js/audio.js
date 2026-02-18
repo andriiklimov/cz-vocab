@@ -1,45 +1,68 @@
 /**
- * audio.js — Czech pronunciation via Web Speech API
+ * audio.js — Czech pronunciation via Google Translate TTS
+ * Falls back to Web Speech API if Google TTS is unavailable
  */
 const Audio = (() => {
-  let synth = null;
+  let currentAudio = null;
 
   function init() {
-    synth = window.speechSynthesis;
+    // Nothing to initialize for Google TTS
   }
 
   /**
-   * Speak a Czech text string
-   * @param {string} text - text to pronounce
-   * @param {string} lang - BCP47 language tag (default 'cs-CZ')
+   * Build Google Translate TTS URL for Czech text
    */
-  function speak(text, lang = 'cs-CZ') {
-    if (!synth) init();
-    if (!synth) return;
+  function _buildGoogleTTSUrl(text) {
+    const encoded = encodeURIComponent(text);
+    return `https://translate.google.com/translate_tts?ie=UTF-8&tl=cs&client=tw-ob&q=${encoded}`;
+  }
 
-    // Cancel any ongoing speech
+  /**
+   * Speak a Czech text string via Google Translate TTS
+   * @param {string} text - text to pronounce
+   */
+  function speak(text) {
+    // Stop any currently playing audio
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio = null;
+    }
+
+    const audio = new window.Audio(_buildGoogleTTSUrl(text));
+    currentAudio = audio;
+
+    audio.play().catch(() => {
+      // Fallback to Web Speech API if Google TTS fails
+      _speakFallback(text);
+    });
+  }
+
+  /**
+   * Web Speech API fallback
+   */
+  function _speakFallback(text) {
+    if (!('speechSynthesis' in window)) return;
+
+    const synth = window.speechSynthesis;
     synth.cancel();
 
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
-    utterance.rate = 0.9;
+    utterance.lang = 'cs-CZ';
+    utterance.rate = 0.85;
     utterance.pitch = 1;
 
-    // Try to find a Czech voice
     const voices = synth.getVoices();
     const czechVoice = voices.find(v => v.lang.startsWith('cs'));
-    if (czechVoice) {
-      utterance.voice = czechVoice;
-    }
+    if (czechVoice) utterance.voice = czechVoice;
 
     synth.speak(utterance);
   }
 
   /**
-   * Check if speech synthesis is available
+   * Check if audio playback is available
    */
   function isAvailable() {
-    return 'speechSynthesis' in window;
+    return typeof window.Audio === 'function' || 'speechSynthesis' in window;
   }
 
   return { init, speak, isAvailable };
