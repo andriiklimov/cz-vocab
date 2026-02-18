@@ -122,7 +122,7 @@ const App = (() => {
     const allTags = new Set();
     words.forEach(w => w.tags.forEach(t => allTags.add(t)));
 
-    const tagOrder = ['Привітання','Їжа','Числа','Побут','Люди','Природа','Здоров\'я','Вимова','Слова'];
+    const tagOrder = ['Привітання','Їжа','Числа','Побут','Люди','Природа','Здоров\'я','Дієслова','Опис'];
     const sorted = tagOrder.filter(t => allTags.has(t));
     // append any tags not in the predefined order
     allTags.forEach(t => { if (!sorted.includes(t)) sorted.push(t); });

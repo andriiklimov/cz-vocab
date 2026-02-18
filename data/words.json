@@ -233,7 +233,7 @@
     "ukrainian": "говорити",
     "example": "Umíte mluvit česky?",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -275,7 +275,7 @@
     "ukrainian": "розуміти",
     "example": "Rozumíte česky?",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -331,7 +331,7 @@
     "ukrainian": "спробуйте це перекласти",
     "example": "Zkuste to přeložit do češtiny.",
     "tags": [
-      "Слова"
+      "Привітання"
     ],
     "difficulty": 2
   },
@@ -429,7 +429,7 @@
     "ukrainian": "ілюзія",
     "example": "To je jen iluze.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -443,7 +443,7 @@
     "ukrainian": "швидко",
     "example": "Mluví velmi rychle.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -485,7 +485,7 @@
     "ukrainian": "місце",
     "example": "Je tady volné místo?",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -527,7 +527,7 @@
     "ukrainian": "могти",
     "example": "Mohu vám pomoci?",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -555,7 +555,7 @@
     "ukrainian": "ще",
     "example": "Chcete ještě něco?",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -695,7 +695,7 @@
     "ukrainian": "нюхати",
     "example": "Pes rád čichá květiny.",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -709,7 +709,7 @@
     "ukrainian": "турбота",
     "example": "Mám velkou starost o rodinu.",
     "tags": [
-      "Слова"
+      "Здоров'я"
     ],
     "difficulty": 2
   },
@@ -737,7 +737,7 @@
     "ukrainian": "характер",
     "example": "Má klidnou povahu.",
     "tags": [
-      "Слова"
+      "Люди"
     ],
     "difficulty": 2
   },
@@ -751,7 +751,7 @@
     "ukrainian": "поки що, досі",
     "example": "Zatím je všechno v pořádku.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -807,7 +807,7 @@
     "ukrainian": "натхнення",
     "example": "Hledám inspiraci pro svou práci.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -849,7 +849,7 @@
     "ukrainian": "серйозний",
     "example": "To je vážný problém.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -863,7 +863,7 @@
     "ukrainian": "запах",
     "example": "Cítím vůni kávy.",
     "tags": [
-      "Слова"
+      "Природа"
     ],
     "difficulty": 2
   },
@@ -877,7 +877,7 @@
     "ukrainian": "попереджувати",
     "example": "Musím vás varovat před nebezpečím.",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -933,7 +933,7 @@
     "ukrainian": "життя",
     "example": "Život je krásný.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -947,7 +947,7 @@
     "ukrainian": "сторона",
     "example": "Na druhé straně ulice je obchod.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -961,7 +961,7 @@
     "ukrainian": "батьківщина",
     "example": "Miluju svou vlast.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -989,7 +989,7 @@
     "ukrainian": "заборона",
     "example": "Tady je zákaz kouření.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1003,7 +1003,7 @@
     "ukrainian": "гарний",
     "example": "To je krásný den.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -1059,7 +1059,7 @@
     "ukrainian": "спокій",
     "example": "Dnes je pohoda, nikam nespěchám.",
     "tags": [
-      "Слова"
+      "Здоров'я"
     ],
     "difficulty": 2
   },
@@ -1073,7 +1073,7 @@
     "ukrainian": "уряд",
     "example": "Vláda schválila nový zákon.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1129,7 +1129,7 @@
     "ukrainian": "пісенька",
     "example": "Zpívá krásnou písničku.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1157,7 +1157,7 @@
     "ukrainian": "рішення",
     "example": "Musíme najít řešení.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1199,7 +1199,7 @@
     "ukrainian": "задоволений",
     "example": "Jsem spokojený se svou prací.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1227,7 +1227,7 @@
     "ukrainian": "чудовий",
     "example": "To je úžasný nápad!",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1241,7 +1241,7 @@
     "ukrainian": "завдання",
     "example": "Musím dokončit úkol.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1269,7 +1269,7 @@
     "ukrainian": "робити",
     "example": "Co mám činit?",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1283,7 +1283,7 @@
     "ukrainian": "спритний",
     "example": "Je to šikovný člověk.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1339,7 +1339,7 @@
     "ukrainian": "страйк",
     "example": "Učitelé vyhlásili stávku.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1367,7 +1367,7 @@
     "ukrainian": "бути схожим",
     "example": "Podobáš se svému otci.",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1395,7 +1395,7 @@
     "ukrainian": "прес",
     "example": "Ve vinici je starý lis.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 3
   },
@@ -1409,7 +1409,7 @@
     "ukrainian": "стрілки (годинника)",
     "example": "Ručičky hodin ukazují poledne.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1451,7 +1451,7 @@
     "ukrainian": "здивований",
     "example": "Byl jsem překvapený tím dárkem.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1479,7 +1479,7 @@
     "ukrainian": "хто",
     "example": "Kdo to je?",
     "tags": [
-      "Слова"
+      "Привітання"
     ],
     "difficulty": 1
   },
@@ -1521,7 +1521,7 @@
     "ukrainian": "також",
     "example": "Já chci taky zmrzlinu!",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -1633,7 +1633,7 @@
     "ukrainian": "ви знаєте",
     "example": "Znáte tuto restauraci?",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1647,7 +1647,7 @@
     "ukrainian": "чеський",
     "example": "Český jazyk je krásný.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -1675,7 +1675,7 @@
     "ukrainian": "читайте",
     "example": "Čtěte prosím nahlas.",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1689,7 +1689,7 @@
     "ukrainian": "ретельно, уважно",
     "example": "Čtěte pečlivě instrukce.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1703,7 +1703,7 @@
     "ukrainian": "вимовляйте",
     "example": "Vyslovujte správně každé slovo.",
     "tags": [
-      "Слова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1717,7 +1717,7 @@
     "ukrainian": "довжина",
     "example": "Délka samohlásek je důležitá.",
     "tags": [
-      "Слова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1787,7 +1787,7 @@
     "ukrainian": "погано",
     "example": "Cítím se špatně.",
     "tags": [
-      "Слова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -1801,7 +1801,7 @@
     "ukrainian": "вілли (коротке i)",
     "example": "Na kopci stojí krásné vily.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1815,7 +1815,7 @@
     "ukrainian": "феї (довге í)",
     "example": "Víly tančily v lese.",
     "tags": [
-      "Вимова"
+      "Природа"
     ],
     "difficulty": 2
   },
@@ -1829,7 +1829,7 @@
     "ukrainian": "я дам (довге á)",
     "example": "Dám ti to zítra.",
     "tags": [
-      "Вимова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1843,7 +1843,7 @@
     "ukrainian": "дамба (коротке a)",
     "example": "U řeky je stará dam.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1857,7 +1857,7 @@
     "ukrainian": "мило / приємно (коротке e)",
     "example": "Bylo to mile překvapení.",
     "tags": [
-      "Вимова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1871,7 +1871,7 @@
     "ukrainian": "милі / дорогі (довге é)",
     "example": "Milé dámy a pánové.",
     "tags": [
-      "Вимова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -1885,7 +1885,7 @@
     "ukrainian": "стовп (довге ů)",
     "example": "Zatloukl kůl do země.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1899,7 +1899,7 @@
     "ukrainian": "котив (коротке u)",
     "example": "Kul kouli po podlaze.",
     "tags": [
-      "Вимова"
+      "Дієслова"
     ],
     "difficulty": 3
   },
@@ -1913,7 +1913,7 @@
     "ukrainian": "токи (коротке y)",
     "example": "Staré mlaty jsou na farmě.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 3
   },
@@ -1927,7 +1927,7 @@
     "ukrainian": "молодий (довге ý)",
     "example": "Je to mladý muž.",
     "tags": [
-      "Вимова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -1941,7 +1941,7 @@
     "ukrainian": "мода (довге ó)",
     "example": "Sleduje nejnovější módu.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -1955,7 +1955,7 @@
     "ukrainian": "заморожування (ž = ж)",
     "example": "Mražení potravin je praktické.",
     "tags": [
-      "Вимова"
+      "Їжа"
     ],
     "difficulty": 2
   },
@@ -1969,7 +1969,7 @@
     "ukrainian": "морозіння (z = з)",
     "example": "Cítím mrazení v zádech.",
     "tags": [
-      "Вимова"
+      "Здоров'я"
     ],
     "difficulty": 2
   },
@@ -1983,7 +1983,7 @@
     "ukrainian": "кинути (h = г)",
     "example": "Hoď mi ten míč!",
     "tags": [
-      "Вимова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -1997,7 +1997,7 @@
     "ukrainian": "ходити (ch = х)",
     "example": "Chodím do práce pěšky.",
     "tags": [
-      "Вимова"
+      "Дієслова"
     ],
     "difficulty": 2
   },
@@ -2011,7 +2011,7 @@
     "ukrainian": "диявол (ď = дь)",
     "example": "Ďas ho pokoušel.",
     "tags": [
-      "Вимова"
+      "Люди"
     ],
     "difficulty": 3
   },
@@ -2025,7 +2025,7 @@
     "ukrainian": "подарунок (тверде d)",
     "example": "Dostal krásný dar.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 1
   },
@@ -2039,7 +2039,7 @@
     "ukrainian": "жир (тверде t)",
     "example": "Maso má hodně tuku.",
     "tags": [
-      "Вимова"
+      "Їжа"
     ],
     "difficulty": 2
   },
@@ -2053,7 +2053,7 @@
     "ukrainian": "стук (ť = ть)",
     "example": "Slyšel jsem ťukání na dveře.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -2067,7 +2067,7 @@
     "ukrainian": "добрий (довге ý)",
     "example": "Je to hodný člověk.",
     "tags": [
-      "Вимова"
+      "Опис"
     ],
     "difficulty": 1
   },
@@ -2081,7 +2081,7 @@
     "ukrainian": "добрі (довге í)",
     "example": "Buďte hodní, děti!",
     "tags": [
-      "Вимова"
+      "Опис"
     ],
     "difficulty": 2
   },
@@ -2095,7 +2095,7 @@
     "ukrainian": "завдяки / спасибі (довге í)",
     "example": "Díky za pomoc!",
     "tags": [
-      "Вимова"
+      "Привітання"
     ],
     "difficulty": 1
   },
@@ -2109,7 +2109,7 @@
     "ukrainian": "кинджали (довге ý)",
     "example": "Na stěně visely staré dýky.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 3
   },
@@ -2123,7 +2123,7 @@
     "ukrainian": "стін (ě = є)",
     "example": "Barva stěn je bílá.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -2137,7 +2137,7 @@
     "ukrainian": "дякую (dě = дє)",
     "example": "Děkuju, jsi hodný.",
     "tags": [
-      "Вимова"
+      "Привітання"
     ],
     "difficulty": 1
   },
@@ -2151,7 +2151,7 @@
     "ukrainian": "ковдра (тверде de)",
     "example": "Přikryj se dekou.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -2165,7 +2165,7 @@
     "ukrainian": "кошик (š = ш)",
     "example": "Hoď to do koše.",
     "tags": [
-      "Вимова"
+      "Побут"
     ],
     "difficulty": 2
   },
@@ -2179,7 +2179,7 @@
     "ukrainian": "дрізд (s = с)",
     "example": "Kos zpívá v zahradě.",
     "tags": [
-      "Вимова"
+      "Природа"
     ],
     "difficulty": 2
   },
@@ -2207,7 +2207,7 @@
     "ukrainian": "пані (довге í)",
     "example": "Dobrý den, paní Nováková.",
     "tags": [
-      "Вимова"
+      "Люди"
     ],
     "difficulty": 1
   },
@@ -2221,7 +2221,7 @@
     "ukrainian": "панове (довге á)",
     "example": "Vážení páni, vítejte!",
     "tags": [
-      "Вимова"
+      "Люди"
     ],
     "difficulty": 2
   }
