@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cz-vocab-v16';
+const CACHE_NAME = 'cz-vocab-v17';
 const ASSETS = [
   './',
   './index.html',
@@ -9,6 +9,9 @@ const ASSETS = [
   './js/spaced-repetition.js',
   './data/words.json',
   './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/apple-touch-icon.png',
 ];
 
 // Install — cache all assets

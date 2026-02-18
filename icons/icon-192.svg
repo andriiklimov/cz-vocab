@@ -1,5 +1,27 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
-  <rect width="192" height="192" rx="32" fill="#3b82f6"/>
-  <text x="96" y="110" font-family="Segoe UI,sans-serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle">CZ</text>
-  <text x="96" y="155" font-family="Segoe UI,sans-serif" font-size="28" fill="#dbeafe" text-anchor="middle">vocab</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="38" fill="url(#bg)"/>
+  <g transform="translate(28,30)">
+    <rect x="0" y="0" width="136" height="40" rx="6" fill="#ffffff"/>
+    <rect x="0" y="40" width="136" height="40" rx="6" fill="#d7141a"/>
+    <rect x="0" y="40" width="136" height="20" fill="#d7141a"/>
+    <polygon points="0,0 68,40 0,80" fill="#11457e"/>
+    <rect x="0" y="0" width="8" height="8" rx="6" fill="#11457e"/>
+    <rect x="0" y="72" width="8" height="8" rx="6" fill="#11457e"/>
+  </g>
+  <g transform="translate(30,120)">
+    <rect x="0" y="0" width="56" height="38" rx="10" fill="rgba(255,255,255,0.95)"/>
+    <polygon points="14,38 22,48 28,38" fill="rgba(255,255,255,0.95)"/>
+    <text x="28" y="27" font-family="Segoe UI,system-ui,sans-serif" font-size="20" font-weight="700" fill="#2563eb" text-anchor="middle">CZ</text>
+    <rect x="66" y="6" width="56" height="38" rx="10" fill="rgba(255,255,255,0.25)"/>
+    <polygon points="100,44 108,54 114,44" fill="rgba(255,255,255,0.25)"/>
+    <text x="94" y="33" font-family="Segoe UI,system-ui,sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">UA</text>
+    <line x1="58" y1="22" x2="64" y2="22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="61,18 65,22 61,26" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

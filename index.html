@@ -9,12 +9,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>CZ-Vocab — Чеська лексика</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇨🇿</text></svg>">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script>
     // Non-destructive SW update check on version change
     (function() {
-      var CURRENT = 'v16';
+      var CURRENT = 'v17';
       if (localStorage.getItem('czvocab_sw_ver') !== CURRENT) {
         localStorage.setItem('czvocab_sw_ver', CURRENT);
         if ('serviceWorker' in navigator) {

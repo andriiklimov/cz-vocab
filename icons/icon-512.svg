@@ -1,5 +1,27 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="80" fill="#3b82f6"/>
-  <text x="256" y="290" font-family="Segoe UI,sans-serif" font-size="170" font-weight="bold" fill="white" text-anchor="middle">CZ</text>
-  <text x="256" y="410" font-family="Segoe UI,sans-serif" font-size="72" fill="#dbeafe" text-anchor="middle">vocab</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="102" fill="url(#bg)"/>
+  <g transform="translate(72,72)">
+    <rect x="0" y="0" width="368" height="108" rx="16" fill="#ffffff"/>
+    <rect x="0" y="108" width="368" height="108" rx="16" fill="#d7141a"/>
+    <rect x="0" y="108" width="368" height="54" fill="#d7141a"/>
+    <polygon points="0,0 184,108 0,216" fill="#11457e"/>
+    <rect x="0" y="0" width="20" height="20" rx="16" fill="#11457e"/>
+    <rect x="0" y="196" width="20" height="20" rx="16" fill="#11457e"/>
+  </g>
+  <g transform="translate(76,320)">
+    <rect x="0" y="0" width="152" height="100" rx="26" fill="rgba(255,255,255,0.95)"/>
+    <polygon points="38,100 58,128 74,100" fill="rgba(255,255,255,0.95)"/>
+    <text x="76" y="70" font-family="Segoe UI,system-ui,sans-serif" font-size="52" font-weight="700" fill="#2563eb" text-anchor="middle">CZ</text>
+    <rect x="178" y="14" width="152" height="100" rx="26" fill="rgba(255,255,255,0.25)"/>
+    <polygon points="268,114 288,142 304,114" fill="rgba(255,255,255,0.25)"/>
+    <text x="254" y="84" font-family="Segoe UI,system-ui,sans-serif" font-size="52" font-weight="700" fill="#ffffff" text-anchor="middle">UA</text>
+    <line x1="156" y1="54" x2="174" y2="54" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    <polyline points="168,42 178,54 168,66" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

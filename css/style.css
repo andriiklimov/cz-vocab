@@ -707,6 +707,18 @@ button:focus-visible {
 
 }
 
+@media (max-width: 360px) {
+  .card-example-row {
+    gap: 0.25rem;
+  }
+
+  .card-example-row .card-action-btn.speak-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+}
+
 @media (min-width: 601px) {
   .stats-bar {
     gap: 1rem;
