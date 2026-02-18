@@ -96,6 +96,19 @@ const SpacedRepetition = (() => {
     return words.filter(w => Storage.getWordProgress(w.id).box >= MAX_BOX).length;
   }
 
+  /**
+   * Get weighted progress percentage across all boxes (0-100)
+   * Each box contributes proportionally: box 1 = 0%, box 2 = 25%, ..., box 5 = 100%
+   */
+  function getProgressPercent(words) {
+    if (words.length === 0) return 0;
+    const total = words.reduce((sum, w) => {
+      const box = Storage.getWordProgress(w.id).box;
+      return sum + ((box - 1) / (MAX_BOX - 1));
+    }, 0);
+    return Math.round((total / words.length) * 100);
+  }
+
   return {
     onCorrect,
     onWrong,
@@ -104,6 +117,7 @@ const SpacedRepetition = (() => {
     getDueWords,
     getBox,
     getLearnedCount,
+    getProgressPercent,
     MAX_BOX,
     BOX_INTERVALS,
   };

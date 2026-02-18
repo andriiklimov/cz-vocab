@@ -365,7 +365,7 @@ const App = (() => {
     const total = words.length;
     const learned = SpacedRepetition.getLearnedCount(words);
     const dueCount = SpacedRepetition.getDueCount(words);
-    const pct = total > 0 ? Math.round((learned / total) * 100) : 0;
+    const pct = SpacedRepetition.getProgressPercent(words);
 
     if (totalEl) totalEl.textContent = total;
     if (learnedEl) learnedEl.textContent = `${pct}%`;
